@@ -1,0 +1,21 @@
+.breadcrumbs {
+    color: $color-accent;
+    font-size: 12px;
+
+    a {
+        margin-right: 10px;
+        margin-left: 10px;
+        color: #000;
+
+        &:first-child {
+            margin-right: 10px;
+            margin-left: 0;
+        }
+    }
+
+    .breadcrumb_last {
+        margin-left: 10px;
+        color: #888;
+        cursor: default;
+    }
+}

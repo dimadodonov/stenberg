@@ -1,0 +1,28 @@
+@import 'helpers/all';
+@import 'generated/all';
+@import 'base/all';
+
+// Libs
+@import 'swiper/swiper-bundle';
+@import '_lib/fancybox';
+
+// Customization libs
+@import 'custom';
+
+// Import site components
+@import 'components/breadcrumbs';
+@import 'components/pagination';
+@import 'components/buttons';
+@import 'components/input';
+
+// Import main styles
+@import 'main';
+
+// Import site layouts
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/nav';
+@import 'layout/section';
+
+// Import pages
+@import 'pages/page';

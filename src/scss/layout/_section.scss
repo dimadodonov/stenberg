@@ -1,3 +1,9 @@
 .section {
     position: relative;
+    width: 100%;
+
+    &-intro {
+        height: 779px;
+        background-color: $color-accent;
+    }
 } // .section

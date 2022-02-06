@@ -22,6 +22,7 @@ function header_menu_primary() {
         'menu_id'         => '',
     ));
 }
+
 register_nav_menus( array(
     'mob' => 'Моб',
     'mob' => 'Моб'

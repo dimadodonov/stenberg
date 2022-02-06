@@ -1,8 +1,8 @@
 //FONTS
-$f: GothamPro-Regular, sans-serif;
-$f-light: GothamPro-light, sans-serif;
-$f-medium: GothamPro-Medium, sans-serif;
-$f-bold: GothamPro-Bold, sans-serif;
+$f: Gilroy-Regular, sans-serif;
+$f-medium: Gilroy-Medium, sans-serif;
+$f-semibold: Gilroy-Semibold, sans-serif;
+$f-bold: Gilroy-Bold, sans-serif;
 
 $base-font-size: 16px;
 $base-font-family: $f;
@@ -17,7 +17,7 @@ $base-section-indent: 50px;
 $gutter: $base-indent;
 
 //BASE VARS
-$color-accent: #0072aa;
+$color-accent: #a2be96;
 $color-main: #ff8272;
 $color-third: #fff06b;
 
@@ -44,7 +44,7 @@ $gray--lightest: #dee3e7;
 
 //TEXT COLORS
 $color-text--darkest: $gray--darkest;
-$color-text: #000;
+$color-text: #1b1b1b;
 $color-text--light: #84a8d9;
 $color-text--lighten: $gray--lighten;
 $color-text--lightest: $gray--lightest;

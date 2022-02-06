@@ -9,6 +9,7 @@ if ( ! function_exists( 'hook_header' ) ) {
      * Display Hooks Header
      */
     function hook_header() {
+        echo '<h1>Hooks for Header</h1>';
     }
 }
 
@@ -26,6 +27,7 @@ if ( ! function_exists( 'hook_footer' ) ) {
      * Display Hooks Footer
      */
     function hook_footer() {
+        echo 'Hooks for footer';
     }
 }
 
@@ -58,6 +60,7 @@ if ( ! function_exists( 'hook_intro' ) ) {
      * Display Hooks intro
      */
     function hook_intro() {
+        echo 'Hooks for intro page';
     }
 }
 
@@ -66,31 +69,7 @@ if ( ! function_exists( 'hook_home_category' ) ) {
      * Display Hooks Home Category
      */
     function hook_home_category() {
-    }
-}
-
-if ( ! function_exists( 'hook_section_sale_news' ) ) {
-    /**
-     * Display Hooks Section Sale and news
-     */
-    function hook_section_sale_news() {
-    }
-}
-
-if ( ! function_exists( 'hook_section_loop' ) ) {
-    /**
-     * Display Hooks Section Loop product
-     */
-    function hook_section_loop() {
-
-    }
-}
-
-if ( ! function_exists( 'hook_section_contacts' ) ) {
-    /**
-     * Display Hooks Section Contacts
-     */
-    function hook_section_contacts() {
+        echo 'Hook for home category';
     }
 }
 

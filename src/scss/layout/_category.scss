@@ -1,0 +1,99 @@
+.category {
+    position: relative;
+
+    &__wrap {
+        display: flex;
+        width: 100%;
+
+        margin: -20px -15px 0;
+    }
+
+    &-card {
+        position: relative;
+        width: calc(100% / 4 - 30px);
+        margin: 0 15px;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.425) 100%
+        );
+        min-height: 520px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            transition: $trs;
+            background-color: $color-accent;
+        }
+
+        &:hover {
+            // &::before {
+            //     opacity: 0.85;
+            // }
+
+            // .category-card__inner {
+            // }
+
+            // .category-card__desc {
+            // }
+        }
+
+        &__wrap {
+            position: absolute;
+            top: 40px;
+            right: 20px;
+            bottom: 0;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 40px;
+            transition: $trs;
+        }
+
+        // &__inner {
+        // }
+
+        &__title {
+            margin-bottom: 30px;
+            transition: $trs;
+            color: white;
+            font-family: $f-semibold;
+            font-size: 28px;
+            line-height: 33px;
+        }
+
+        &__desc {
+            color: white;
+            font-size: 14px;
+            line-height: 150%;
+        }
+
+        &__link {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            color: white;
+
+            span {
+                font-family: $f-semibold;
+                font-size: 16px;
+                line-height: 19px;
+            }
+
+            svg {
+                width: 14px;
+                height: 14px;
+                margin-top: 3px;
+                margin-left: 10px;
+                fill: white;
+            }
+        }
+    }
+}

@@ -110,29 +110,47 @@ if ( ! function_exists( 'hook_home_category' ) ) {
     /**
      * Display Hooks Home Category
      */
-    function hook_home_category() {}
-}
+    function hook_home_category() { ?>
+        <div class="section section-category category">
+            <div class="container">
+                <div class="category__wrap">
 
-if ( ! function_exists( 'hook_head_code' ) ) {
+                    <a class="category-card" href="#">
+                        <div class="category-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
+                        </div>
+                        <div class="category-card__wrap">
+                            <div class="category-card__inner">
+                                <div class="category-card__title">Негорючие и огнестойкие панели</div>
+                                <div class="category-card__desc">Что нужно в общественных и жилых местах кроме удобства и уединения? Правильно – комфорт и безопасность? Вы же знаете, как тревожно работается и живется там, где нет перегородок.</div>
+                            </div>
+                            <div class="category-card__link">
+                                <span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </a>
 
-    add_filter('wp_body_open', 'hook_head_code');
-    /**
-     * Display Hooks Head Code
-     */
-    function hook_head_code() {}
-}
+                    <a class="category-card" href="#">
+                        <div class="category-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
+                        </div>
+                        <div class="category-card__wrap">
+                            <div class="category-card__inner">
+                                <div class="category-card__title">Негорючие и огнестойкие панели</div>
+                                <div class="category-card__desc">Что нужно в общественных и жилых местах кроме удобства и уединения? Правильно – комфорт и безопасность? Вы же знаете, как тревожно работается и живется там, где нет перегородок.</div>
+                            </div>
+                            <div class="category-card__link">
+                                <span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </a>
 
-if ( ! function_exists( 'google_analytics' ) ) {
-    add_filter('wp_head', 'google_analytics');
-    function google_analytics() {
-        // echo get_field( 'google_analytics_solutions', 'option' );
-    }
-}
-if ( ! function_exists( 'yandex_metrika' ) ) {
-    add_filter('wp_footer', 'yandex_metrika');
-    function yandex_metrika() {
-        // echo get_field( 'yandex_metrika', 'option' );
-    }
+                </div>
+            </div>
+        </div>
+    <?php }
 }
 
 if ( ! function_exists( 'hook_callback' ) ) {
@@ -157,5 +175,27 @@ if ( ! function_exists( 'hook_callback' ) ) {
                 </div>
             </div>
         <?php
+    }
+}
+
+if ( ! function_exists( 'hook_head_code' ) ) {
+
+    add_filter('wp_body_open', 'hook_head_code');
+    /**
+     * Display Hooks Head Code
+     */
+    function hook_head_code() {}
+}
+
+if ( ! function_exists( 'google_analytics' ) ) {
+    add_filter('wp_head', 'google_analytics');
+    function google_analytics() {
+        // echo get_field( 'google_analytics_solutions', 'option' );
+    }
+}
+if ( ! function_exists( 'yandex_metrika' ) ) {
+    add_filter('wp_footer', 'yandex_metrika');
+    function yandex_metrika() {
+        // echo get_field( 'yandex_metrika', 'option' );
     }
 }

@@ -25,6 +25,7 @@ add_action( 'hook_home', 'hook_page_before',                    10 );
 add_action( 'hook_home', 'hook_intro',                          20 );
 add_action( 'hook_home', 'hook_home_category',                  30 );
 add_action( 'hook_home', 'hook_home_siteinfo',                  40 );
+add_action( 'hook_home', 'hook_section_projects',               50 );
 add_action( 'hook_home', 'hook_page_after',                     80 );
 
 

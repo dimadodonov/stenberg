@@ -311,6 +311,40 @@ if ( ! function_exists( 'hook_home_siteinfo' ) ) {
     <?php }
 }
 
+if ( ! function_exists( 'hook_section_projects' ) ) {
+    /**
+     * Display Hooks Section Projects
+     */
+    function hook_section_projects() { ?>
+        
+        <div class="section section-projects section-pixel">
+            <div class="section__title center">
+                <h2>Наши проекты</h2>
+            </div>
+            <div class="projects projects__loop">
+                <div class="projects__wrap">
+                    <div class="projects-card">
+                        <div class="projects-card__image">
+                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                        </div>
+                        <div class="projects-card-desc">
+                            <div class="projects-card-desc__inner">
+                                <div class="projects-card-desc__icon">
+                                    <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
+                                </div>
+                                <div class="projects-card-desc__title">Негорючие и огнестойкие панели</div>
+                            </div>
+                            <div class="projects-card-desc__link"><span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <?php }
+}
+
 if ( ! function_exists( 'hook_callback' ) ) {
     add_filter('wp_footer', 'hook_callback');
     /**

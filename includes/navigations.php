@@ -7,7 +7,9 @@ if ( ! defined( 'ABSPATH')) {
 
 register_nav_menus( array(
     'primary' => 'Основное',
-    'primary' => 'Основное'
+    'footer_nav_site' => 'Подвал: Меню сайта',
+    'footer_nav_cat' => 'Подвал: Каталог продукции',
+    'footer_nav_info' => 'Подвал: Информация'
 ));
 
 
@@ -23,15 +25,38 @@ function header_menu_primary() {
     ));
 }
 
-register_nav_menus( array(
-    'mob' => 'Моб',
-    'mob' => 'Моб'
-));
-
-
-function fortkids_header_menu_mob() {
+function footer_nav_site() {
     wp_nav_menu( array(
-        'theme_location' => 'mob',
-        'menu_id' => 'mob_menu',
+        'theme_location' => 'footer_nav_site',
+        'menu_id' => 'footer_nav_site',
+	    'container'       => 'nav',
+        'container_class' => 'nav-footer',
+        'container_id'    => 'footer_nav_site',
+        'menu_class'      => 'nav__wrap',
+        'menu_id'         => '',
+    ));
+}
+
+function footer_nav_cat() {
+    wp_nav_menu( array(
+        'theme_location' => 'footer_nav_cat',
+        'menu_id' => 'footer_nav_cat',
+	    'container'       => 'nav',
+        'container_class' => 'nav-footer',
+        'container_id'    => 'footer_nav_cat',
+        'menu_class'      => 'nav__wrap',
+        'menu_id'         => '',
+    ));
+}
+
+function footer_nav_info() {
+    wp_nav_menu( array(
+        'theme_location' => 'footer_nav_info',
+        'menu_id' => 'footer_nav_info',
+	    'container'       => 'nav',
+        'container_class' => 'nav-footer',
+        'container_id'    => 'footer_nav_info',
+        'menu_class'      => 'nav__wrap',
+        'menu_id'         => '',
     ));
 }

@@ -1,3 +1,149 @@
 .footer {
     position: relative;
+
+    &__top {
+        padding: 60px 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    &__bottom {
+        padding: 35px 0;
+        background-color: $color-accent;
+    }
+
+    &__row {
+        display: flex;
+    }
+
+    &__col {
+        &3 {
+            width: calc(100% * 3);
+        }
+    }
+
+    &__copy,
+    &__privacy,
+    &__dev {
+        color: #fff;
+        font-size: 14px;
+
+        a {
+            color: #fff;
+
+            strong {
+                font-family: $f-semibold;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &__privacy {
+        text-align: center;
+    }
+
+    &__dev {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        a {
+            text-decoration: underline;
+
+            &.dev {
+                text-decoration: none;
+            }
+
+            & + a {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    &-logo {
+        max-width: 225px;
+        margin-right: 115px;
+
+        &__desc {
+            margin-top: 15px;
+            font-family: $f-medium;
+            font-size: 14px;
+            line-height: 150%;
+        }
+    }
+
+    &-nav {
+        display: flex;
+        justify-content: space-between;
+        max-width: 740px;
+
+        &__col {
+            & + & {
+                margin-left: 80px;
+            }
+        }
+
+        &__title {
+            color: #1b1b1b;
+            font-family: $f-medium;
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        ul {
+            margin-top: 20px;
+
+            li {
+                & + li {
+                    margin-top: 10px;
+                }
+
+                a {
+                    color: rgba(27, 27, 27, 0.7);
+                    font-family: $f-medium;
+                    font-size: 14px;
+                    line-height: 16px;
+
+                    &:hover {
+                        color: $color-accent;
+                    }
+                }
+            }
+        }
+    }
+
+    &-contacts {
+        max-width: 300px;
+        margin-left: auto;
+
+        &__item {
+            & + & {
+                margin-top: 40px;
+            }
+        }
+
+        &__callback {
+            color: $color-accent;
+            font-family: $f-medium;
+            font-size: 14px;
+            line-height: 13px;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        &__phone {
+            display: block;
+            margin-top: 10px;
+            color: #1b1b1b;
+            font-family: $f-semibold;
+            font-size: 18px;
+            line-height: 21px;
+        }
+
+        &__adress {
+            color: #4f4f4f;
+            font-family: $f-medium;
+            font-size: 16px;
+            line-height: 150%;
+        }
+    }
 } // .footer

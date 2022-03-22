@@ -1,0 +1,131 @@
+.siteinfo {
+    position: relative;
+    margin: 120px 0;
+
+    &__row {
+        display: flex;
+        align-items: center;
+    }
+
+    &__col {
+        width: 50%;
+    }
+
+    &__text {
+        max-width: 720px;
+        height: 100%;
+        padding: 100px 0;
+
+        h2 {
+            margin-bottom: 40px;
+            color: #1b1b1b;
+            font-family: $f-semibold;
+            font-size: 48px;
+            line-height: 59px;
+        }
+
+        p {
+            margin-bottom: 40px;
+
+            color: #1b1b1b;
+            font-size: 22px;
+            line-height: 150%;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            color: #809676;
+            font-family: $f-bold;
+            text-decoration-line: underline;
+        }
+
+        strong {
+            font-family: $f-bold;
+            font-weight: normal;
+        }
+    }
+
+    &__gallery {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            right: 0;
+            bottom: 0;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            border: 5px solid $color-accent;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        bottom: 40px;
+        left: -25px;
+        z-index: 90;
+
+        svg {
+            width: 149px;
+            height: 149px;
+        }
+    }
+
+    &__slider {
+        width: 720px;
+        height: 720px;
+    }
+}
+
+.dd-slider {
+    &-btn {
+        position: absolute;
+        top: 50%;
+        z-index: 10;
+        transform: translateY(-50%);
+    }
+
+    &-next,
+    &-prev {
+        width: 52px;
+        height: 52px;
+        transition: $trs;
+        background-color: #a2be96;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+            background-color: #809676;
+        }
+    }
+
+    &-next {
+        right: 50px;
+
+        &::before {
+            background-image: url('../../assets/files/icons/svg/slider-next.svg');
+        }
+    }
+
+    &-prev {
+        left: 50px;
+
+        &::before {
+            background-image: url('../../assets/files/icons/svg/slider-prev.svg');
+        }
+    }
+}

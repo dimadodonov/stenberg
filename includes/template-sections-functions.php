@@ -443,11 +443,11 @@ if ( ! function_exists( 'hook_section_clients' ) ) {
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--fridays.svg'; ?>" alt="fridays">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--alpari.svg'; ?>" alt="alpari">
                                 </div>
 
                                 <div class="swiper-slide">
-                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--alpari.svg'; ?>" alt="alpari">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--fridays.svg'; ?>" alt="fridays">
                                 </div>
 
                             </div>
@@ -469,7 +469,7 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
         <div class="section section-articles">
             <div class="container">
                 <div class="articles-tabs">
-                    .articles-tabs
+                    <div class="articles-tabs"></div>
                 </div>
                 <div class="section__title">
                     <h2>Новости</h2>

@@ -26,7 +26,11 @@ add_action( 'hook_home', 'hook_intro',                          20 );
 add_action( 'hook_home', 'hook_home_category',                  30 );
 add_action( 'hook_home', 'hook_home_siteinfo',                  40 );
 add_action( 'hook_home', 'hook_section_projects',               50 );
-add_action( 'hook_home', 'hook_page_after',                     80 );
+add_action( 'hook_home', 'hook_section_edge',                   60 );
+add_action( 'hook_home', 'hook_section_clients',                70 );
+add_action( 'hook_home', 'hook_section_articles',               80 );
+// add_action( 'hook_home', 'hook_section_seo',                    90 );
+add_action( 'hook_home', 'hook_page_after',                     100 );
 
 
 /**

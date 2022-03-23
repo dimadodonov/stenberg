@@ -83,6 +83,10 @@
 }
 
 .dd-slider {
+    &-nooverflow {
+        overflow: visible !important;
+    }
+
     &-btn {
         position: absolute;
         top: 50%;
@@ -110,6 +114,10 @@
 
         &:hover {
             background-color: #809676;
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0;
         }
     }
 

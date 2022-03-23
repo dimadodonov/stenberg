@@ -1,0 +1,40 @@
+.clients {
+    position: relative;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    &__title {
+        width: 335px;
+
+        h2 {
+            white-space: nowrap;
+        }
+    }
+
+    &__slider {
+        width: calc(100% - 415px);
+        margin-left: 80px;
+        padding-left: 80px;
+        border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+        .swiper-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .swiper-slide {
+            // background-color: #ccc;
+        }
+
+        .dd-slider-prev {
+            display: none !important;
+        }
+
+        .dd-slider-next {
+            right: 0;
+        }
+    }
+}

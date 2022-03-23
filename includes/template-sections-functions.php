@@ -323,22 +323,171 @@ if ( ! function_exists( 'hook_section_projects' ) ) {
             </div>
             <div class="projects projects__loop">
                 <div class="projects__wrap">
-                    <div class="projects-card">
-                        <div class="projects-card__image">
-                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
-                        </div>
-                        <div class="projects-card-desc">
-                            <div class="projects-card-desc__inner">
-                                <div class="projects-card-desc__icon">
-                                    <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
+                    <div class="swiper projectsSwiper dd-slider-nooverflow">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <div class="projects-card">
+                                    <div class="projects-card__image">
+                                        <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                    </div>
+                                    <div class="projects-card-desc">
+                                        <div class="projects-card-desc__inner">
+                                            <div class="projects-card-desc__icon">
+                                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
+                                            </div>
+                                            <div class="projects-card-desc__title">Негорючие и огнестойкие панели</div>
+                                        </div>
+                                        <div class="projects-card-desc__link"><span>Подробнее</span>
+                                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="projects-card-desc__title">Негорючие и огнестойкие панели</div>
                             </div>
-                            <div class="projects-card-desc__link"><span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+
+                            <div class="swiper-slide">
+                                <div class="projects-card">
+                                    <div class="projects-card__image">
+                                        <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                    </div>
+                                    <div class="projects-card-desc">
+                                        <div class="projects-card-desc__inner">
+                                            <div class="projects-card-desc__icon">
+                                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
+                                            </div>
+                                            <div class="projects-card-desc__title">Негорючие и огнестойкие панели</div>
+                                        </div>
+                                        <div class="projects-card-desc__link"><span>Подробнее</span>
+                                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+
+                            <div class="swiper-slide">
+                                <div class="projects-card">
+                                    <div class="projects-card__image">
+                                        <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                    </div>
+                                    <div class="projects-card-desc">
+                                        <div class="projects-card-desc__inner">
+                                            <div class="projects-card-desc__icon">
+                                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
+                                            </div>
+                                            <div class="projects-card-desc__title">Негорючие и огнестойкие панели</div>
+                                        </div>
+                                        <div class="projects-card-desc__link"><span>Подробнее</span>
+                                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="dd-slider-btn dd-slider-next"></div>
+                        <div class="dd-slider-btn dd-slider-prev"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-projects__btn">
+                <a class="btn btn-border btn-border-large" href="<?php echo get_site_url('/catalog'); ?>">Смотреть все</a>
+            </div>
+        </div>
+    <?php }
+}
+
+if ( ! function_exists( 'hook_section_edge' ) ) {
+    /**
+     * Display Hooks Section Edge
+     */
+    function hook_section_edge() { ?>
+        <div class="section section-edge">
+            <div class="section__title center">
+                <h2>Преимущества</h2>
+            </div>
+            
+            <div class="container">
+            111
+            </div>
+        </div>
+    <?php }
+}
+
+if ( ! function_exists( 'hook_section_clients' ) ) {
+    /**
+     * Display Hooks Section clients
+     */
+    function hook_section_clients() { ?>
+        <div class="section section-clients">
+            <div class="container">
+                <div class="clients__wrap">
+                    <div class="clients__title"><h2>Наши клиенты</h2></div>
+                    <div class="clients__slider">
+                        <div class="swiper clientsSwiper">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--sberbank.svg'; ?>" alt="sberbank">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--metro.svg'; ?>" alt="metro">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--anzhi.svg'; ?>" alt="anzhi">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--kfc.svg'; ?>" alt="kfc">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--fridays.svg'; ?>" alt="fridays">
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <img src="<?php echo get_template_directory_uri() . '/assets/files/icons/svg/clients--alpari.svg'; ?>" alt="alpari">
+                                </div>
+
+                            </div>
+                            <div class="dd-slider-btn dd-slider-next"></div>
+                            <div class="dd-slider-btn dd-slider-prev"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    <?php }
+}
+
+if ( ! function_exists( 'hook_section_articles' ) ) {
+    /**
+     * Display Hooks Section Articles
+     */
+    function hook_section_articles() { ?>
+        <div class="section section-articles">
+            <div class="container">
+                <div class="articles-tabs">
+                    .articles-tabs
+                </div>
+                <div class="section__title">
+                    <h2>Новости</h2>
+                </div>
+            </div>
+        </div>
+    <?php }
+}
+
+if ( ! function_exists( 'hook_section_seo' ) ) {
+    /**
+     * Display Hooks Section Articles
+     */
+    function hook_section_seo() { ?>
+        <div class="section section-seo">
+            <div class="container">
+                <div class="section__title center">
+                    <h2>Заголовок для SEO</h2>
                 </div>
             </div>
         </div>

@@ -22,6 +22,10 @@
             margin: 0 0 30px;
         }
 
+        &:hover h3 {
+            color: #a2be96;
+        }
+
         &__date {
             position: absolute;
             top: 15px;
@@ -50,6 +54,7 @@
         &__desc {
             h3 {
                 padding: 20px 0;
+                transition: $trs;
                 color: #1b1b1b;
                 font-family: $f-bold;
                 font-size: 24px;

@@ -130,6 +130,19 @@
 
     &-articles {
         padding: 80px 0;
+
+        &__btn {
+            width: 100%;
+            margin: 50px auto 0;
+            text-align: center;
+
+            .btn {
+                display: inline;
+                padding: 15px 45px;
+                font-family: $f-semibold;
+                font-size: 22px;
+            }
+        }
     }
 
     &-seo {

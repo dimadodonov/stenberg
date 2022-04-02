@@ -14,11 +14,13 @@
 @import 'components/pagination';
 @import 'components/buttons';
 @import 'components/input';
+@import 'components/tabs';
 
 // Import main styles
 @import 'main';
 
 // Import site layouts
+@import 'layout/article';
 @import 'layout/catalog';
 @import 'layout/category';
 @import 'layout/clients';

@@ -468,11 +468,70 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
     function hook_section_articles() { ?>
         <div class="section section-articles">
             <div class="container">
-                <div class="articles-tabs">
-                    <div class="articles-tabs"></div>
-                </div>
-                <div class="section__title">
-                    <h2>Новости</h2>
+                <div class="articles-tabs tabs">
+                    <ul class="tabs-nav">
+                        <li class="tab-nav tab-nav--active">Новости</li>
+                        <li class="tab-nav">Статьи</li>
+                    </ul>
+                    
+                    <div class="tabs-content">
+                        <div class="tab-content tab-content--active">
+                            <div class="article__loop">
+                                
+                                <article class="article-card">
+                                    <a href="">
+                                        <div class="article-card__date">
+                                            <strong>21</strong>
+                                            <span>Август</span>
+                                        </div>
+                                        <div class="article-card__image">
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item.jpg'; ?>" alt="">
+                                        </div>
+                                        <div class="article-card__desc">
+                                            <h3>Мы с Вами 8 лет</h3>
+                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                
+                                <article class="article-card">
+                                    <a href="">
+                                        <div class="article-card__date">
+                                            <strong>21</strong>
+                                            <span>Август</span>
+                                        </div>
+                                        <div class="article-card__image">
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item.jpg'; ?>" alt="">
+                                        </div>
+                                        <div class="article-card__desc">
+                                            <h3>Мы с Вами 8 лет</h3>
+                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                
+                                <article class="article-card">
+                                    <a href="">
+                                        <div class="article-card__date">
+                                            <strong>21</strong>
+                                            <span>Август</span>
+                                        </div>
+                                        <div class="article-card__image">
+                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item.jpg'; ?>" alt="">
+                                        </div>
+                                        <div class="article-card__desc">
+                                            <h3>Мы с Вами 8 лет</h3>
+                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
+                                        </div>
+                                    </a>
+                                </article>
+                            
+                            </div>
+                        </div> 
+                        <div class="tab-content">
+                            содержимое второй вкладки
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

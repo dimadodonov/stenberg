@@ -1,0 +1,67 @@
+.article {
+    position: relative;
+
+    &__loop {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+
+        @include xs-block() {
+            flex-direction: column;
+            margin: 0;
+        }
+    }
+
+    &-card {
+        position: relative;
+        width: calc(1 / 3 * 100% - 30px);
+        margin: 0 15px;
+
+        @include xs-block() {
+            width: 100%;
+            margin: 0 0 30px;
+        }
+
+        &__date {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            strong {
+                display: block;
+                padding: 5px 18px;
+                background-color: #fff;
+                color: #5a6b53;
+                font-family: $f-bold;
+                font-size: 36px;
+                line-height: 36px;
+                text-align: center;
+            }
+
+            span {
+                padding: 4px 18px;
+                background-color: #a2be96;
+                color: #5d7d4f;
+                font-family: $f-bold;
+                text-align: center;
+            }
+        }
+
+        &__desc {
+            h3 {
+                padding: 20px 0;
+                color: #1b1b1b;
+                font-family: $f-bold;
+                font-size: 24px;
+                font-weight: normal;
+                line-height: 29px;
+            }
+
+            p {
+                color: rgba(0, 0, 0, 0.5);
+                font-size: 16px;
+                line-height: 150%;
+            }
+        }
+    }
+}

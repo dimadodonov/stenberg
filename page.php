@@ -13,6 +13,7 @@
  */
 
 get_header();
+$post_id = get_the_ID();
 ?>
 
 	<div id="primary" class="content-area">
@@ -121,16 +122,76 @@ get_header();
 					</section>
 				<?php endif;
 
-				if(is_page('contacts')) : ?>
+				if(is_page('price')) : ?>
 					<div class="price">
-						<div class="price__wrap">
-							<div class="price__item">
-								<div class="price__icon"></div>
-								<div class="price__title"></div>
+						<div class="container">
+
+							<div class="price__wrap">
+								<?php
+									$prices = get_field('price', $post_id);
+
+									if( $prices ) : 
+										foreach( $prices as $price ) :
+											$filetype = $price['price_file']['subtype'];
+											?>
+												<div class="price__item">
+													<div class="price__icon">
+													<?php
+														if( 'vnd.openxmlformats-officedocument.wordprocessingml.document' === $filetype ) :
+															?>
+															<picture>
+																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
+																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
+																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
+															</picture>
+															<div class="price__icon--type">.docx</div>
+															<?php
+
+														endif;
+
+														if( 'vnd.openxmlformats-officedocument.spreadsheetml.sheet' === $filetype ) :
+															?>
+															<picture>
+																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
+																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
+																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
+															</picture>
+															<div class="price__icon--type">.xlsx</div>
+															<?php
+														endif;
+
+														if( 'pdf' === $filetype ) :
+															?>
+															<picture>
+																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
+																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
+																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
+															</picture>
+															<div class="price__icon--type">.pdf</div>
+															<?php
+														endif;
+													?>
+													</div>
+													<?php 
+														$filetitle = $price['price_title'];
+														if($filetitle) : 
+															echo '<div class="price__title">' . $filetitle . '</div>';
+														endif;
+													?>
+												</div>
+											<?php
+										endforeach;
+									endif;
+								?>
 							</div>
+							
 						</div>
 					</div>
-				<?php endif; ?>
+				<?php 
+				
+					hook_home_category();
+
+				endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

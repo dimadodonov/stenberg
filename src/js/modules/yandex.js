@@ -39,7 +39,7 @@ export default () => {
                         iconLayout: 'default#image',
                         // Своё изображение иконки метки.
                         iconImageHref:
-                            '/wp-content/themes/ep/assets/files/icons/svg/icon--pin.svg',
+                            '/wp-content/themes/stenberg/assets/files/icons/svg/icon--pin.svg',
                         // Размеры метки.
                         iconImageSize: [50, 62.16],
                         // Смещение левого верхнего угла иконки относительно

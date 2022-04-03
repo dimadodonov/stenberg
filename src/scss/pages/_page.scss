@@ -1,3 +1,38 @@
 .page {
     position: relative;
+
+    h1 {
+        margin-bottom: 50px;
+        font-family: $f-semibold;
+        font-size: 64px;
+        font-weight: normal;
+        line-height: 76px;
+
+        @include xs-block() {
+            font-size: 36px;
+        }
+    }
+
+    .entry-content {
+        margin-bottom: 50px;
+
+        ul {
+            padding: 0 0 0 20px;
+
+            li {
+                list-style-type: disc;
+                font-family: $f;
+                font-size: 14px;
+                line-height: 140%;
+
+                a {
+                    text-decoration: underline;
+                }
+
+                & + li {
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
 } // .page

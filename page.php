@@ -187,11 +187,7 @@ $post_id = get_the_ID();
 							
 						</div>
 					</div>
-				<?php 
-				
-					hook_home_category();
-
-				endif; ?>
+				<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

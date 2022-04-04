@@ -29,8 +29,28 @@ add_action( 'hook_home', 'hook_section_projects',               50 );
 add_action( 'hook_home', 'hook_section_edge',                   60 );
 add_action( 'hook_home', 'hook_section_clients',                70 );
 add_action( 'hook_home', 'hook_section_articles',               80 );
-// add_action( 'hook_home', 'hook_section_seo',                    90 );
+add_action( 'hook_home', 'hook_section_seo',                    90 );
 add_action( 'hook_home', 'hook_page_after',                     100 );
+
+/**
+ * About Page hooks
+ *
+ * @see  hook_page_before
+ * @see  hook_section_projects
+ * @see  hook_section_edge
+ * @see  hook_section_clients
+ * @see  hook_section_articles
+ * @see  hook_section_seo
+ * @see  hook_page_after
+ */
+
+add_action( 'hook_page_about', 'hook_page_before',                    10 );
+add_action( 'hook_page_about', 'hook_section_projects',               50 );
+add_action( 'hook_page_about', 'hook_section_edge',                   60 );
+add_action( 'hook_page_about', 'hook_section_clients',                70 );
+add_action( 'hook_page_about', 'hook_section_articles',               80 );
+add_action( 'hook_page_about', 'hook_section_seo',                    90 );
+add_action( 'hook_page_about', 'hook_page_after',                     100 );
 
 
 /**

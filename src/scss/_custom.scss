@@ -1,3 +1,21 @@
+.grid {
+    margin-right: -15px;
+    margin-left: -15px;
+
+    &-item {
+        position: relative;
+        width: calc(1 / 3 * 100% - 30px) !important;
+        margin-bottom: 30px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+.grid-item,
+.grid-sizer {
+    width: calc(1 / 3 * 100%) !important;
+}
+
 .background-pixel {
     background-image: url('../../assets/files/icons/svg/pixel.svg');
 }

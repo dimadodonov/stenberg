@@ -2,9 +2,7 @@
     position: relative;
 
     &__wrap {
-        & + & {
-            margin-top: 50px;
-        }
+        margin-bottom: 60px;
     }
 
     &__container {
@@ -20,7 +18,7 @@
         width: 100%;
         padding: 75px 0 105px;
 
-        &--image {
+        &--bg {
             position: absolute;
             top: 0;
             right: 0;
@@ -60,6 +58,18 @@
             }
         }
 
+        &--image {
+            position: absolute;
+            bottom: -200px;
+            left: 100%;
+            padding-left: 30px;
+
+            img {
+                max-width: 820px;
+                height: auto;
+            }
+        }
+
         .breadcrumbs span,
         .breadcrumbs a,
         .about__title h1,
@@ -69,12 +79,13 @@
     }
 
     &__desc {
+        position: relative;
         max-width: 840px;
 
         p {
             font-size: 24px;
 
-            & + & {
+            & + p {
                 margin-top: 40px;
             }
         }

@@ -49,9 +49,10 @@ export default () => {
         msnry.layout();
     });
 
-    document
-        .querySelector('.project-share__icon')
-        .addEventListener('click', function () {
+    const share = document.querySelector('.project-share__icon');
+    if (share) {
+        share.addEventListener('click', function () {
             alert();
         });
+    }
 };

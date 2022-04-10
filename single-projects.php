@@ -182,7 +182,7 @@ $gallery = get_field('projects_gallery');
 					</div>
 				</div>
 				<div class="section-projects__btn">
-					<a class="btn btn-border btn-border-large" href="<?php echo get_site_url('/projects'); ?>">Смотреть все</a>
+					<a class="btn btn-border btn-border-large" href="<?php echo site_url( '/projects' ); ?>">Смотреть все</a>
 				</div>
 			</div>
 

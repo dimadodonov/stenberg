@@ -120,12 +120,14 @@
 
     &-edge {
         padding: 100px 0;
+        background-color: #fff;
     }
 
     &-clients {
         padding: 80px 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #fff;
     }
 
     &-articles {
@@ -142,6 +144,14 @@
                 font-family: $f-semibold;
                 font-size: 22px;
             }
+        }
+    }
+
+    &-category {
+        padding: 50px 0;
+
+        .section__title {
+            margin-bottom: 50px;
         }
     }
 
@@ -163,6 +173,7 @@
     &-seo {
         padding: 80px 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: #fff;
 
         h2 {
             margin-bottom: 60px;

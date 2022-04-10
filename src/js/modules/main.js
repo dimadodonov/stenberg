@@ -33,26 +33,35 @@ export default () => {
 
     // init Masonry
     const grid = document.querySelector('.grid');
-    var msnry = new masonry(grid, {
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        columnWidth: '.grid-sizer',
-    });
 
-    // layout Masonry after each image loads
-    // msnry.imagesLoaded().progress(function () {
-    //     msnry.masonry();
-    // });
-
-    imagesLoaded(grid).on('progress', function () {
+    if (grid) {
+        var msnry = new masonry(grid, {
+            itemSelector: '.grid-item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer',
+        });
         // layout Masonry after each image loads
-        msnry.layout();
-    });
+        // msnry.imagesLoaded().progress(function () {
+        //     msnry.masonry();
+        // });
 
+        imagesLoaded(grid).on('progress', function () {
+            // layout Masonry after each image loads
+            msnry.layout();
+        });
+    }
+
+    // Блок поделится в соц сетях
     const share = document.querySelector('.project-share__icon');
     if (share) {
+        const shareClose = document.querySelector('.project-share__close');
         share.addEventListener('click', function () {
-            alert();
+            share.nextElementSibling.classList.add('is_active');
+        });
+        shareClose.addEventListener('click', function () {
+            document
+                .querySelector('.project-share__box')
+                .classList.remove('is_active');
         });
     }
 };

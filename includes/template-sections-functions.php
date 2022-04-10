@@ -261,6 +261,78 @@ if ( ! function_exists( 'hook_home_category' ) ) {
     <?php }
 }
 
+if ( ! function_exists( 'hook_section_category' ) ) {
+    /**
+     * Display Hooks Section Category
+     */
+    function hook_section_category() { ?>
+        <div class="section section-category category-row">
+            <div class="container">
+                <div class="section__title">
+                    <h2>Каталог продукции</h2>
+                </div>
+                <div class="category-row-row__wrap">
+                <div class="category-row__inner">
+
+                    <a class="category-row-card" href="#">
+                        <div class="category-row-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
+                        </div>
+                        <div class="category-row-card__wrap">
+                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
+                            <div class="category-row-card__link">
+                                <span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="category-row-card" href="#">
+                        <div class="category-row-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
+                        </div>
+                        <div class="category-row-card__wrap">
+                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
+                            <div class="category-row-card__link">
+                                <span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="category-row-card" href="#">
+                        <div class="category-row-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
+                        </div>
+                        <div class="category-row-card__wrap">
+                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
+                            <div class="category-row-card__link">
+                                <span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="category-row-card" href="#">
+                        <div class="category-row-card__image">
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
+                        </div>
+                        <div class="category-row-card__wrap">
+                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
+                            <div class="category-row-card__link">
+                                <span>Подробнее</span>
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                </div>
+            </div>
+        </div>
+    <?php }
+}
+
 if ( ! function_exists( 'hook_home_siteinfo' ) ) {
     /**
      * Display Hooks Home Siteinfo
@@ -390,7 +462,7 @@ if ( ! function_exists( 'hook_section_projects' ) ) {
                 </div>
             </div>
             <div class="section-projects__btn">
-                <a class="btn btn-border btn-border-large" href="<?php echo get_site_url('/catalog'); ?>">Смотреть все</a>
+                <a class="btn btn-border btn-border-large" href="<?php echo get_site_url('/projects'); ?>">Смотреть все</a>
             </div>
         </div>
     <?php }

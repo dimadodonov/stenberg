@@ -195,9 +195,14 @@
             top: 100%;
             left: 50%;
             z-index: 10;
+            display: none;
             padding: 30px;
             transform: translateX(-50%);
             background-color: #fff;
+
+            &.is_active {
+                display: inline;
+            }
         }
 
         &__close {

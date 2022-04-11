@@ -470,9 +470,44 @@ if ( ! function_exists( 'hook_section_edge' ) ) {
                 <div class="edge">
                     <div class="edge__wrap">
                         <div class="edge__item">
-                            <div class="edge__icon"></div>
-                            <div class="edge__title"></div>
-                            <div class="edge__desc"></div>
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--consultation"/></svg></div>
+                            <div class="edge__title">Консультация</div>
+                            <div class="edge__desc"><span>Звоните и задавайте вопросы, которые вас интересуют, и получайте на них ответы прямо сейчас.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--experience"/></svg></div>
+                            <div class="edge__title">Опыт</div>
+                            <div class="edge__desc"><span>Используйте наш опыт в реализованных проектах и не только.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--solution"/></svg></div>
+                            <div class="edge__title">Решение</div>
+                            <div class="edge__desc"><span>Согласитесь, что хорошо, когда помимо качественного товара, Вам предложат техническое решение.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--analysis"/></svg></div>
+                            <div class="edge__title">Планирование</div>
+                            <div class="edge__desc"><span>Для нас важно, чтобы Вы получили свой заказ в срок, поэтому в момент запуска в производство мы уже планируем дату отгрузки.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--library"/></svg></div>
+                            <div class="edge__title">Выбор</div>
+                            <div class="edge__desc"><span>Наши специалисты подберут Вам тот материал, который действительно нужен. Более 400 разновидностей декоративных, акустических, рельефных, шпонированных панелей.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--award"/></svg></div>
+                            <div class="edge__title">Качество</div>
+                            <div class="edge__desc"><span>Вы получаете только сертифицированные материалы.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--certificate"/></svg></div>
+                            <div class="edge__title">Гарантия</div>
+                            <div class="edge__desc"><span>На всю нашу продукцию и услуги мы даем гарантию до 2-х лет.</span></div>
+                        </div>
+                        <div class="edge__item">
+                            <div class="edge__icon"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--service"/></svg></div>
+                            <div class="edge__title">Услуги</div>
+                            <div class="edge__desc"><span>На часть нашей продукции мы оказываем услуги «ПОД КЛЮЧ», а также мы предосталяем услуги по установке, доставке, консультированию, замерам, разработке рабочих четртежей и так далее.</span></div>
                         </div>
                     </div>
                 </div>

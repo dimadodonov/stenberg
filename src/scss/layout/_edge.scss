@@ -1,0 +1,38 @@
+.edge {
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    &__item {
+        width: calc(1 / 4 * 100% - 30px);
+        margin: 0 15px 30px;
+    }
+
+    &__icon {
+        margin-bottom: 30px;
+
+        svg {
+            width: 80px;
+            height: 80px;
+            fill: $color-accent;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        color: #1b1b1b;
+        font-family: $f-bold;
+        font-size: 24px;
+        line-height: 30px;
+    }
+
+    &__desc {
+        span {
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 16px;
+            line-height: 150%;
+        }
+    }
+}

@@ -32,6 +32,9 @@ require get_template_directory() . '/includes/template-functions.php';
 require get_template_directory() . '/includes/navigations.php';
 
 
+
+
+
 /**
  * Load WooCommerce compatibility file.
  */
@@ -39,5 +42,8 @@ if ( class_exists( 'WooCommerce' ) ) {
     require get_template_directory() . '/includes/woocommerce.php';
     require get_template_directory() . '/includes/woocommerce-fields.php';
     require get_template_directory() . '/woocommerce/includes/wc-functions.php';
-    require get_template_directory() . '/woocommerce/includes/wc-template-function.php';
+    require get_template_directory() . '/woocommerce/includes/wc-functions-archive.php';
+    require get_template_directory() . '/woocommerce/includes/wc-functions-product.php';
+    require get_template_directory() . '/woocommerce/includes/wc-functions-breadcrumb.php';
+    require get_template_directory() . '/woocommerce/includes/wc-functions-remove.php';
 }

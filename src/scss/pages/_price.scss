@@ -9,12 +9,24 @@
     }
 
     &__item {
+        position: relative;
         width: calc(1 / 4 * 100% - 30px);
         margin: 0 15px;
 
         @include xs-block() {
             width: calc(1 / 2 * 100% - 30px);
             margin: 0 15px 30px;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
     }
 

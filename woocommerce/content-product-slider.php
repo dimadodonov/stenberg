@@ -31,7 +31,7 @@ $post_id = get_the_ID();
 // $product_published->date
 ?>
 
-<div <?php wc_product_class('product-card product-card__loop'); ?>>
+<div <?php wc_product_class('product-card product-card__slider'); ?>>
 	<?php if( current_user_can( 'edit_posts' ) ) {
 		echo '<a href="' . get_edit_post_link() . '" class="product-card__edit"><span></span></a>';
 	}; ?>

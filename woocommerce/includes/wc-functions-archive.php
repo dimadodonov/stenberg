@@ -16,15 +16,10 @@ if ( ! function_exists( 'ep_start_loop' ) ) {
             <aside class="aside products__aside">
                 <div class="products-filter">
                     <?php
-                        if(is_shop())  :
+                        if(!is_shop())  :
                             echo do_shortcode( '[br_filter_single filter_id=1302]' ); // Категории товаров
                         endif;
                     ?>
-                    <?php echo do_shortcode( '[br_filter_single filter_id=77]' ); // Высота ворса ?>
-                    <?php echo do_shortcode( '[br_filter_single filter_id=79]' ); // Наличие паралона ?>
-                    <?php echo do_shortcode( '[br_filter_single filter_id=80]' ); // Дизайн ?>
-                    <?php echo do_shortcode( '[br_filter_single filter_id=76]' ); ?>
-                    <?php echo do_shortcode( '[br_filter_single filter_id=75]' ); ?>
                 </div>
             </aside>
             <div class="products__inner">

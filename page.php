@@ -133,51 +133,54 @@ $post_id = get_the_ID();
 									if( $prices ) : 
 										foreach( $prices as $price ) :
 											$filetype = $price['price_file']['subtype'];
+											$filetitle = $price['price_title'];
+											$fileurl = $price['price_file']['url'];
 											?>
 												<div class="price__item">
-													<div class="price__icon">
-													<?php
-														if( 'vnd.openxmlformats-officedocument.wordprocessingml.document' === $filetype ) :
-															?>
-															<picture>
-																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
-																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
-																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
-															</picture>
-															<div class="price__icon--type">.docx</div>
-															<?php
+													<a href="<?php echo $fileurl;?>" download="<?php echo $filetitle; ?>">
+														<div class="price__icon">
+														<?php
+															if( 'vnd.openxmlformats-officedocument.wordprocessingml.document' === $filetype ) :
+																?>
+																<picture>
+																	<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
+																	<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
+																	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
+																</picture>
+																<div class="price__icon--type">.docx</div>
+																<?php
 
-														endif;
+															endif;
 
-														if( 'vnd.openxmlformats-officedocument.spreadsheetml.sheet' === $filetype ) :
-															?>
-															<picture>
-																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
-																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
-																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
-															</picture>
-															<div class="price__icon--type">.xlsx</div>
-															<?php
-														endif;
+															if( 'vnd.openxmlformats-officedocument.spreadsheetml.sheet' === $filetype ) :
+																?>
+																<picture>
+																	<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
+																	<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
+																	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
+																</picture>
+																<div class="price__icon--type">.xlsx</div>
+																<?php
+															endif;
 
-														if( 'pdf' === $filetype ) :
-															?>
-															<picture>
-																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
-																<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
-																<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
-															</picture>
-															<div class="price__icon--type">.pdf</div>
-															<?php
-														endif;
-													?>
-													</div>
-													<?php 
-														$filetitle = $price['price_title'];
-														if($filetitle) : 
-															echo '<div class="price__title">' . $filetitle . '</div>';
-														endif;
-													?>
+															if( 'pdf' === $filetype ) :
+																?>
+																<picture>
+																	<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.webp" type="image/webp">
+																	<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" type="image/png">
+																	<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/price/icon-file.png" alt="<?php echo get_bloginfo( 'title' ); ?>">
+																</picture>
+																<div class="price__icon--type">.pdf</div>
+																<?php
+															endif;
+														?>
+														</div>
+														<?php 
+															if($filetitle) : 
+																echo '<div class="price__title">' . $filetitle . '</div>';
+															endif;
+														?>
+													</a>
 												</div>
 											<?php
 										endforeach;

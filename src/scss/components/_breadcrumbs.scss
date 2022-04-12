@@ -1,7 +1,33 @@
 .breadcrumbs {
     padding: 30px 0;
     color: $color-accent;
-    font-size: 12px;
+    font-size: 14px;
+
+    @include xs-block() {
+        overflow-x: auto;
+        white-space: nowrap;
+
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    &__wrap {
+        @include xs-block() {
+            width: 100%;
+            margin: 0 -15px;
+            overflow-x: hidden;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        @include xs-block() {
+            display: none; /* Safari and Chrome */
+        }
+    }
+
+    span a + span {
+        margin-left: 10px;
+    }
 
     a {
         margin-right: 10px;

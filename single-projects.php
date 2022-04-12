@@ -53,7 +53,7 @@ $gallery = get_field('projects_gallery');
 
 						<div class="project-video">
 							
-							<div class="project-video__player">
+							<div class="project-video__player video__player">
 								<?php echo $video; ?>
 							</div>
 

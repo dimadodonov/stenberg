@@ -31,24 +31,20 @@
     }
 
     &-accent {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-        border-radius: 10px;
-        background-color: #0072aa;
-        box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+        display: block;
+        width: 100%;
+        padding: 13px 16px;
+        transition: $trs;
+        background-color: $color-accent;
+        color: #fff;
+        font-family: $f-semibold;
+        font-size: 22px;
+        line-height: 26px;
+        text-align: center;
 
         &:hover {
-            background-color: #005681;
-        }
-
-        ins {
-            padding: 18px 42px;
-            color: #fff;
-            font-family: $f-bold;
-            font-size: 24px;
-            line-height: 24px;
-            text-decoration: none;
+            opacity: 0.8;
+            background-color: $color-accent;
         }
     }
 } // .btn

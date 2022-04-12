@@ -1,3 +1,239 @@
 .products {
     position: relative;
-} // .product
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 0;
+    }
+
+    &__aside {
+        position: relative;
+        width: 100%;
+        max-width: 282px;
+        margin-right: 7.5px;
+        padding-bottom: 15px;
+
+        @include lg-block() {
+            max-width: 250px;
+        }
+
+        @include xs-block() {
+            display: none;
+        }
+    }
+
+    &__inner {
+        flex: 1;
+        width: 100%;
+        margin-left: 7.5px;
+
+        @include xs-block() {
+            margin-left: 0;
+        }
+    }
+
+    &__loop {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 calc(-15px / 2);
+
+        @include xs-block() {
+            margin: 0;
+        }
+
+        .product-card__loop {
+            flex: 1;
+            width: calc(1 / 4 * 100% - 7.5px);
+            min-width: 282px;
+            margin: 0 calc(15px / 2) 15px;
+
+            @include xs-block() {
+                flex: 0 0 calc(50% - 15px);
+                width: calc(50% - 15px);
+                min-width: auto;
+            }
+        }
+    }
+
+    &__nofound {
+        display: flex;
+        align-items: center;
+        padding: 50px 0;
+
+        h2 {
+            font-family: $f;
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        svg {
+            width: 52px;
+            height: 52px;
+            margin-right: 15px;
+            fill: $color-accent;
+        }
+    }
+
+    &-filter {
+        position: sticky;
+        position: sticky;
+        top: 20px;
+        bottom: 20px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.5);
+
+        &__apply {
+            padding: 25px 20px 7.5px;
+
+            button {
+                width: 100%;
+                padding: 12px 30px;
+                border: 0;
+                border-radius: 4px;
+                background: #27ae60;
+
+                color: #fff;
+                font-family: $f-medium;
+                font-size: 16px;
+                line-height: 15px;
+            }
+        }
+
+        &__clear {
+            padding: 7.5px 20px 25px;
+
+            button {
+                width: 100%;
+                padding: 12px 30px;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 4px;
+                background: transparent;
+
+                color: #282828;
+                font-family: $f;
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        &__item {
+            padding: 20px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+
+            h3 {
+                margin-bottom: 15px;
+                font-family: $f-medium;
+                font-size: 18px;
+                line-height: 140%;
+            }
+
+            ul {
+                padding: 0;
+
+                li {
+                    margin-top: 10px !important;
+
+                    input[type='checkbox'] {
+                        position: relative;
+                        width: 20px;
+                        height: 20px;
+                        border: none;
+                        border: 1px solid rgba(0, 0, 0, 0.2);
+                        border-radius: 3px;
+                        background-color: #fff;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            opacity: 0;
+                            width: 12px;
+                            height: 12px;
+                            transform: translate(-50%, -50%);
+                            transition: $trs;
+                            background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.5 1.68517C10.0946 1.37111 9.52737 1.46721 9.23206 1.89846L5.01565 8.06721L2.693 5.55236C2.35081 5.1633 1.77659 5.14455 1.41097 5.51017C1.04534 5.87346 1.02659 6.48517 1.37112 6.87189C1.37112 6.87189 4.193 10.0031 4.59847 10.3172C5.00394 10.6313 5.57112 10.5352 5.86644 10.1039L10.7016 3.03283C10.9969 2.59924 10.9055 1.99689 10.5 1.68517Z' fill='black' fill-opacity='0.8'/%3E%3C/svg%3E%0A");
+                        }
+
+                        &:hover::before {
+                            opacity: 0.4;
+                        }
+
+                        &:checked::before {
+                            opacity: 1;
+                        }
+                    }
+
+                    label {
+                        margin-left: 5px;
+                        font-size: 14px;
+                        line-height: 14px;
+                    }
+                }
+            }
+        }
+    }
+
+    .loop-slider {
+        margin-top: -60px;
+        padding-top: 60px;
+
+        @include xs-block() {
+            margin-top: -65px;
+            padding-top: 65px;
+        }
+    }
+
+    .loop-swiper-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 90;
+        display: flex;
+        align-items: center;
+
+        &-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            transition: $trs;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color-accent;
+
+                svg {
+                    fill: white;
+                }
+            }
+
+            &.swiper-button-disabled {
+                opacity: 0.2;
+                background-color: #fff;
+                cursor: default;
+
+                svg {
+                    fill: black;
+                }
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        &-prev {
+            margin-right: 5px;
+
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+} // .products

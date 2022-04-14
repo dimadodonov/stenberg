@@ -40,60 +40,10 @@ do_action( 'woocommerce_before_main_content' );
 					<h1><?php echo woocommerce_page_title(); ?></h1>			
 				<?php endif; ?>
 			</div>
-			<div class="category-row-row__wrap">
+			<div class="category-row__wrap">
 				<div class="category-row__inner">
 
-					<a class="category-row-card" href="#">
-						<div class="category-row-card__image">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
-						</div>
-						<div class="category-row-card__wrap">
-							<div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-							<div class="category-row-card__link">
-								<span>Подробнее</span>
-								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-							</div>
-						</div>
-					</a>
-
-					<a class="category-row-card" href="#">
-						<div class="category-row-card__image">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
-						</div>
-						<div class="category-row-card__wrap">
-							<div class="category-row-card__title">Акустические <br>панели</div>
-							<div class="category-row-card__link">
-								<span>Подробнее</span>
-								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-							</div>
-						</div>
-					</a>
-
-					<a class="category-row-card" href="#">
-						<div class="category-row-card__image">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__tree.jpg" alt="">
-						</div>
-						<div class="category-row-card__wrap">
-							<div class="category-row-card__title">Декоративные <br>панели</div>
-							<div class="category-row-card__link">
-								<span>Подробнее</span>
-								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-							</div>
-						</div>
-					</a>
-
-					<a class="category-row-card" href="#">
-						<div class="category-row-card__image">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__four.jpg" alt="">
-						</div>
-						<div class="category-row-card__wrap">
-							<div class="category-row-card__title">3Д панели <br>для стен</div>
-							<div class="category-row-card__link">
-								<span>Подробнее</span>
-								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-							</div>
-						</div>
-					</a>
+                    <?php hook_products_category(); ?>
 
 				</div>
 			</div>

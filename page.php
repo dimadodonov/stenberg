@@ -243,6 +243,8 @@ $post_id = get_the_ID();
 							
 						</div>
 					</div>
+					
+				<?php hook_section_category(); ?>
 				<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

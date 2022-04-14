@@ -9,6 +9,41 @@ if ( ! function_exists( 'hook_header' ) ) {
      * Display Hooks Header
      */
     function hook_header() { ?>
+    <div class="header-stiky">
+        <div class="header-stiky__wrap">
+            <div class="header-stiky__logo">
+                <?php if(is_home()) : else: ?>
+                    <a href="<?php echo get_home_url(); ?>">
+                <?php endif; ?>
+
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/files/icons/svg/logo.svg" alt="<?php echo get_bloginfo( 'title' ); ?>">
+                    
+                <?php if(is_home()) : else: ?>
+                    </a>
+                <?php endif; ?>
+            </div>
+            <div class="header-stiky__nav">
+                <?php header_menu_primary(); ?>
+            </div>
+            <div class="header-stiky__mess">
+                <div class="messenger__wrap">
+                    <a class="messenger__item whatsapp" href="" title="Напишите нам в Whatsapp">
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
+                    </a>
+                    <a class="messenger__item viber" href="" title="Напишите нам в Viber">
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
+                    </a>
+                    <a class="messenger__item telegram" href="" title="Напишите нам в Telegram">
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="header-stiky__phone">
+                <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
+                <div class="header-phone__num">8 (800) 301-46-32</div>
+            </div>
+        </div>
+    </div>
     <header class="header" id="header">
         <div class="header__wrap">
             <div class="header__logo">
@@ -173,7 +208,7 @@ if ( ! function_exists( 'hook_intro' ) ) {
      * Display Hooks intro
      */
     function hook_intro() { ?>
-        <div class="section section-intro">
+        <section class="section section-intro">
             <div class="section-intro__image">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/intro/intro.jpg" alt="">
             </div>
@@ -188,7 +223,7 @@ if ( ! function_exists( 'hook_intro' ) ) {
                     <span class="btn btn-border btn-border-large btn-border-white">Смотреть каталог</span>
                 </div>
             </div>
-        </div>
+        </section>
     <?php }
 }
 
@@ -197,67 +232,17 @@ if ( ! function_exists( 'hook_home_category' ) ) {
      * Display Hooks Home Category
      */
     function hook_home_category() { ?>
-        <div class="section section-category category-row">
+        <section class="section section-category category-row category-offset">
             <div class="container">
-                <div class="category-row-row__wrap">
-                <div class="category-row__inner">
+                <div class="category-row__wrap">
+                    <div class="category-row__inner">
 
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
+                        <?php hook_products_category(); ?>
 
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     <?php }
 }
 
@@ -266,79 +251,94 @@ if ( ! function_exists( 'hook_section_category' ) ) {
      * Display Hooks Section Category
      */
     function hook_section_category() { ?>
-        <div class="section section-category category-row">
+        <section class="section section-category category-row <?php if(is_page('price')) : echo ' background-pixel background-border'; endif; ?>">
             <div class="container">
-                <div class="section__title">
+                <div class="section__title <?php if(is_page('price')) : echo ' center'; endif; ?>">
                     <h2>Каталог продукции</h2>
                 </div>
-                <div class="category-row-row__wrap">
-                <div class="category-row__inner">
+                <div class="category-row__wrap">
+                    <div class="category-row__inner">
 
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
+                        <?php hook_products_category(); ?>
 
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="category-row-card" href="#">
-                        <div class="category-row-card__image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
-                        </div>
-                        <div class="category-row-card__wrap">
-                            <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
-                            <div class="category-row-card__link">
-                                <span>Подробнее</span>
-                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
+                    </div>
                 </div>
             </div>
+        </section>
+    <?php }
+}
+
+
+if ( ! function_exists( 'hook_products_category' ) ) {
+    /**
+     * Display Hooks Product Category
+     */
+    function hook_products_category() { ?>
+        <div class="category-row__inner">
+
+            <a class="category-row-card" href="<?php echo site_url( '/product-category/negoryuchie-i-ognestoykie-paneli' ); ?>">
+                <div class="category-row-card__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
+                </div>
+                <div class="category-row-card__wrap">
+                    <div class="category-row-card__title">Негорючие и огнестойкие панели</div>
+                    <div class="category-row-card__link">
+                        <span>Подробнее</span>
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a class="category-row-card" href="<?php echo site_url( '/product-category/akusticheskie-paneli' ); ?>">
+                <div class="category-row-card__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
+                </div>
+                <div class="category-row-card__wrap">
+                    <div class="category-row-card__title">Акустические <br>панели</div>
+                    <div class="category-row-card__link">
+                        <span>Подробнее</span>
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a class="category-row-card" href="<?php echo site_url( '/product-category/dekorativnye-paneli' ); ?>">
+                <div class="category-row-card__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__tree.jpg" alt="">
+                </div>
+                <div class="category-row-card__wrap">
+                    <div class="category-row-card__title">Декоративные <br>панели</div>
+                    <div class="category-row-card__link">
+                        <span>Подробнее</span>
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            <a class="category-row-card" href="<?php echo site_url( '/product-category/shponirovannye-paneli' ); ?>">
+                <div class="category-row-card__image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__four.jpg" alt="">
+                </div>
+                <div class="category-row-card__wrap">
+                    <div class="category-row-card__title">3Д панели <br>для стен</div>
+                    <div class="category-row-card__link">
+                        <span>Подробнее</span>
+                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+                    </div>
+                </div>
+            </a>
+
         </div>
     <?php }
 }
+
 
 if ( ! function_exists( 'hook_home_siteinfo' ) ) {
     /**
      * Display Hooks Home Siteinfo
      */
     function hook_home_siteinfo() { ?>
-        <div class="section section-siteinfo siteinfo">
+        <section class="section section-siteinfo siteinfo">
             <div class="container">
                 <div class="siteinfo__row">
                     <div class="siteinfo__col">
@@ -379,7 +379,7 @@ if ( ! function_exists( 'hook_home_siteinfo' ) ) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     <?php }
 }
 
@@ -400,7 +400,7 @@ if ( ! function_exists( 'hook_section_projects' ) ) {
 		// если посты, удовлетворяющие нашим условиям, найдены
 		if( $projects_query->have_posts() ) : ?>
         
-        <div class="section section-projects section-pixel">
+        <section class="section section-projects section-pixel">
             <div class="section__title center">
                 <h2>Наши проекты</h2>
             </div>
@@ -446,7 +446,7 @@ if ( ! function_exists( 'hook_section_projects' ) ) {
             <div class="section-projects__btn">
                 <a class="btn btn-border btn-border-large" href="<?php echo site_url( '/projects' ); ?>">Смотреть все</a>
             </div>
-        </div>
+        </section>
         
         <?php endif;
 		
@@ -461,7 +461,7 @@ if ( ! function_exists( 'hook_section_edge' ) ) {
      * Display Hooks Section Edge
      */
     function hook_section_edge() { ?>
-        <div class="section section-edge">
+        <section class="section section-edge">
             <div class="section__title center">
                 <h2>Преимущества</h2>
             </div>
@@ -512,7 +512,7 @@ if ( ! function_exists( 'hook_section_edge' ) ) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     <?php }
 }
 
@@ -521,7 +521,7 @@ if ( ! function_exists( 'hook_section_clients' ) ) {
      * Display Hooks Section clients
      */
     function hook_section_clients() { ?>
-        <div class="section section-clients">
+        <section class="section section-clients">
             <div class="container">
                 <div class="clients__wrap">
                     <div class="clients__title"><h2>Наши клиенты</h2></div>
@@ -560,7 +560,7 @@ if ( ! function_exists( 'hook_section_clients' ) ) {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     <?php }
 }
 
@@ -569,7 +569,7 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
      * Display Hooks Section Articles
      */
     function hook_section_articles() { ?>
-        <div class="section section-articles">
+        <section class="section section-articles">
             <div class="container">
                 <div class="articles-tabs tabs">
                     <ul class="tabs-nav">
@@ -689,7 +689,7 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
                     <a class="btn btn-border btn-border-large" href="<?php echo site_url('/category/novosti'); ?>">Смотреть все</a>
                 </div>
             </div>
-        </div>
+        </section>
     <?php }
 }
 

@@ -32,6 +32,18 @@
                 }
             }
 
+            &.menu-item-has-children::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 0;
+                width: 10px;
+                height: 10px;
+                transform: translateY(-48%);
+                background-image: url('../../assets/files/icons/svg/icon--arrow-nav.svg');
+                background-size: cover;
+            }
+
             &.menu-item-has-children:hover .sub-menu {
                 display: flex;
             }
@@ -39,7 +51,7 @@
             .sub-menu {
                 position: absolute;
                 top: 100%;
-                z-index: 90;
+                z-index: 190;
                 display: none;
                 flex-direction: column;
                 min-width: 300px;

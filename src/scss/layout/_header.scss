@@ -2,6 +2,7 @@
     position: relative;
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 
     &__wrap {
         display: flex;
@@ -82,6 +83,83 @@
             font-size: 18px;
             line-height: 21px;
             white-space: nowrap;
+        }
+    }
+
+    &-stiky {
+        position: fixed;
+        top: -55px;
+        z-index: 99;
+        width: 100%;
+        height: 51px;
+        transform: translateY(-55px);
+        transition: all 0.5s ease;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        background-color: #fff;
+        box-shadow: 0 15px 20px rgba(0, 0, 0, 0.1);
+
+        &__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1470px;
+            margin: 4px auto;
+        }
+
+        &__logo {
+            img {
+                width: 126px;
+                height: auto;
+            }
+        }
+
+        &__nav {
+            nav {
+                border-bottom: 0;
+
+                ul li {
+                    a {
+                        padding: 0 20px !important;
+                        font-size: 16px;
+                    }
+                }
+
+                .sub-menu li a {
+                    padding: 5px 20px !important;
+                }
+            }
+        }
+
+        &__mess {
+            .messenger__item {
+                width: 32px;
+                height: 32px;
+
+                svg {
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+        }
+
+        &__phone {
+            display: flex;
+            align-items: center;
+
+            .header-phone__num {
+                order: 1;
+                padding-top: 0;
+                padding-right: 20px;
+            }
+
+            .header-phone__btn {
+                order: 2;
+            }
+        }
+
+        &.up {
+            top: 0;
+            transform: translateY(0);
         }
     }
 } // .header

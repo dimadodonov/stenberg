@@ -40,7 +40,7 @@ if ( ! function_exists( 'hook_header' ) ) {
             </div>
             <div class="header-stiky__phone">
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
-                <div class="header-phone__num">8 (800) 301-46-32</div>
+                <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@ if ( ! function_exists( 'hook_header' ) ) {
             </div>
             <div class="header-phone header__block header__border">
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
-                <div class="header-phone__num">8 (800) 301-46-32</div>
+                <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
             </div>
         </div>
     </header>

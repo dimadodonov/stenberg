@@ -573,110 +573,120 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
             <div class="container">
                 <div class="articles-tabs tabs">
                     <ul class="tabs-nav">
-                        <li class="tab-nav tab-nav--active">Новости</li>
-                        <li class="tab-nav">Статьи</li>
+                        <li class="tab-nav tab-nav--active" data-url="novosti">Новости</li>
+                        <li class="tab-nav" data-url="stati">Статьи</li>
                     </ul>
                     
                     <div class="tabs-content">
                         <div class="tab-content tab-content--active">
                             <div class="article__loop">
-                                
-                                <article class="article-card">
-                                    <a href="">
-                                        <div class="article-card__date">
-                                            <strong>21</strong>
-                                            <span>Август</span>
-                                        </div>
-                                        <div class="article-card__image">
-                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item.jpg'; ?>" alt="">
-                                        </div>
-                                        <div class="article-card__desc">
-                                            <h3>Мы с Вами 8 лет</h3>
-                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
-                                        </div>
-                                    </a>
-                                </article>
-                                
-                                <article class="article-card">
-                                    <a href="">
-                                        <div class="article-card__date">
-                                            <strong>21</strong>
-                                            <span>Август</span>
-                                        </div>
-                                        <div class="article-card__image">
-                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item.jpg'; ?>" alt="">
-                                        </div>
-                                        <div class="article-card__desc">
-                                            <h3>Мы с Вами 8 лет</h3>
-                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
-                                        </div>
-                                    </a>
-                                </article>
-                                
-                                <article class="article-card">
-                                    <a href="">
-                                        <div class="article-card__date">
-                                            <strong>21</strong>
-                                            <span>Август</span>
-                                        </div>
-                                        <div class="article-card__image">
-                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item.jpg'; ?>" alt="">
-                                        </div>
-                                        <div class="article-card__desc">
-                                            <h3>Мы с Вами 8 лет</h3>
-                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
-                                        </div>
-                                    </a>
-                                </article>
+
+                            <?php
+                                $args = array(
+                                    'post_type' => 'post',
+                                    'category_name' => 'novosti',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => 3,
+                                );
+
+                                $projects_query = new WP_Query( $args );
+                        
+                                // если посты, удовлетворяющие нашим условиям, найдены
+                                if( $projects_query->have_posts() ) : ?>
+							<?php // запускаем цикл
+							while( $projects_query->have_posts() ) : $projects_query->the_post(); ?>         
+
+                            <article class="article-card">
+                                <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="">
+                                    <div class="article-card__date">
+                                        <strong><?php echo get_the_date('j'); ?></strong>
+                                        <span><?php echo get_the_date('F'); ?></span>
+                                    </div>
+                                    <div class="article-card__image">
+                                        <?php if ( has_post_thumbnail()) { ?>
+                                            <?php the_post_thumbnail('article'); ?>
+                                        <?php } else { ?>
+                                            <picture>
+                                                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.webp" type="image/webp">
+                                                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" type="image/jpg">
+                                                <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
+                                            </picture>
+                                        <?php } ?>
+                                    </div>
+                                    <div class="article-card__desc">
+                                        <?php 
+                                            the_title('<h3>', '</h3>');
+                                            $content = get_the_content();
+                                            echo '<p>' . wp_trim_words( $content, 22, ' ...' ) . '</p>';
+                                        ?>
+                                    </div>
+                                </a>
+                            </article>
+
+							<?php endwhile; ?>
+        
+                            <?php endif;
+                            
+                            // не забудьте про эту функцию, её отсутствие может повлиять на другие циклы на странице
+                            wp_reset_postdata(); ?>
                             
                             </div>
-                        </div> 
+                        </div>
                         <div class="tab-content">
                             <div class="article__loop">
+
+                            <?php
+                                $args = array(
+                                    'post_type' => 'post',
+                                    'category_name' => 'stati',
+                                    'post_status' => 'publish',
+                                    'posts_per_page' => 3,
+                                );
+
+                                $projects_query = new WP_Query( $args );
+                        
+                                // если посты, удовлетворяющие нашим условиям, найдены
+                                if( $projects_query->have_posts() ) : ?>
+
+							<?php // запускаем цикл
+							while( $projects_query->have_posts() ) : $projects_query->the_post(); ?>
                                 
-                                <article class="article-card">
-                                    <a href="">
-                                        <div class="article-card__image">
-                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item-2.jpg'; ?>" alt="">
-                                        </div>
-                                        <div class="article-card__desc">
-                                            <h3>Мы с Вами 8 лет</h3>
-                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
-                                        </div>
-                                    </a>
-                                </article>
-                                
-                                <article class="article-card">
-                                    <a href="">
-                                        <div class="article-card__image">
-                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item-2.jpg'; ?>" alt="">
-                                        </div>
-                                        <div class="article-card__desc">
-                                            <h3>Мы с Вами 8 лет</h3>
-                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
-                                        </div>
-                                    </a>
-                                </article>
-                                
-                                <article class="article-card">
-                                    <a href="">
-                                        <div class="article-card__image">
-                                            <img src="<?php echo get_template_directory_uri() . '/assets/images/section/article/article-item-2.jpg'; ?>" alt="">
-                                        </div>
-                                        <div class="article-card__desc">
-                                            <h3>Мы с Вами 8 лет</h3>
-                                            <p>Дорогие друзья! 21 июля нашей компании исполнилось 8 лет. Мы благодарим наших клиентов за доверие, а коллектив за активную и слаженную работу.</p>
-                                        </div>
-                                    </a>
-                                </article>
+                            <article class="article-card">
+                                <a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="">
+                                    <div class="article-card__image">
+                                        <?php if ( has_post_thumbnail()) { ?>
+                                            <?php the_post_thumbnail('article'); ?>
+                                        <?php } else { ?>
+                                            <picture>
+                                                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.webp" type="image/webp">
+                                                <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" type="image/jpg">
+                                                <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
+                                            </picture>
+                                        <?php } ?>
+                                    </div>
+                                    <div class="article-card__desc">
+                                        <?php 
+                                            the_title('<h3>', '</h3>');
+                                            $content = get_the_content();
+                                            echo '<p>' . wp_trim_words( $content, 22, ' ...' ) . '</p>';
+                                        ?>
+                                    </div>
+                                </a>
+                            </article>
+
+							<?php endwhile; ?>
+        
+                            <?php endif;
+                            
+                            // не забудьте про эту функцию, её отсутствие может повлиять на другие циклы на странице
+                            wp_reset_postdata(); ?>
                             
                             </div>
                         </div>
                     </div>
                 </div>
-                
                 <div class="section-articles__btn">
-                    <a class="btn btn-border btn-border-large" href="<?php echo get_site_url('/news'); ?>">Смотреть все</a>
+                    <a class="btn btn-border btn-border-large" href="<?php echo site_url('/category/novosti'); ?>">Смотреть все</a>
                 </div>
             </div>
         </div>

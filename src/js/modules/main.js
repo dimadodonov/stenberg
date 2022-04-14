@@ -62,4 +62,18 @@ export default () => {
             document.querySelector('.share__box').classList.remove('is_active');
         });
     }
+    // $('.home__products_btn .btn').attr('href', '/product-category/' + linkCat);
+
+    const tabNav = document.querySelectorAll('.tab-nav');
+    if (tabNav) {
+        for (let i = 0; i < tabNav.length; i++) {
+            tabNav[i].addEventListener('click', (event) => {
+                // добавляем активный класс
+                const tabNavUrl = tabNav[i].getAttribute('data-url');
+                console.log(tabNavUrl);
+                document.querySelector('.section-articles__btn .btn').href =
+                    '/category/' + tabNavUrl;
+            });
+        }
+    }
 };

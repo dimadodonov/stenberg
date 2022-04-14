@@ -52,16 +52,14 @@ export default () => {
     }
 
     // Блок поделится в соц сетях
-    const share = document.querySelector('.project-share__icon');
+    const share = document.querySelector('.share__icon');
     if (share) {
-        const shareClose = document.querySelector('.project-share__close');
+        const shareClose = document.querySelector('.share__close');
         share.addEventListener('click', function () {
             share.nextElementSibling.classList.add('is_active');
         });
         shareClose.addEventListener('click', function () {
-            document
-                .querySelector('.project-share__box')
-                .classList.remove('is_active');
+            document.querySelector('.share__box').classList.remove('is_active');
         });
     }
 };

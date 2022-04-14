@@ -110,11 +110,11 @@ $gallery = get_field('projects_gallery');
 					</div>
 
 					<div class="project-share background-pixel">
-						<div class="project-share__icon">
+						<div class="project-share__icon share__icon">
 							<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--share"/></svg>
 						</div>
-						<div class="project-share__box">
-							<div class="project-share__close">
+						<div class="project-share__box share__box">
+							<div class="project-share__close share__close">
 							<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--close"/></svg></div>
 							<script src="https://yastatic.net/share2/share.js"></script>
 							<div class="ya-share2" data-curtain data-size="l" data-shape="round" data-services="vkontakte,facebook,odnoklassniki,telegram,twitter,viber,whatsapp"></div>

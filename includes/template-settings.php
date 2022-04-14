@@ -45,6 +45,7 @@ add_filter( 'big_image_size_threshold', '__return_false' );
 ## Добавляем свой размер для миниатюр
 if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'product', 1024, 1024, true );
+	add_image_size( 'article', 940, 570, true );
 }
 
 ## Удаляет "Рубрика: ", "Метка: " и т.д. из заголовка архива

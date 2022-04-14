@@ -133,8 +133,8 @@ if ( ! function_exists( 'hook_footer' ) ) {
                         </div>
                         <div class="footer__col footer__col3">
                             <div class="footer__dev">
-                                <a href="">Политика конфиденциальности</a>
-                                <a href="" class="dev">Разработано в <strong>Mitroliti</strong>.</a>
+                                <a href="<?php echo site_url( '/privacy' ); ?>">Политика конфиденциальности</a>
+                                <a href="https://mitroliti.ru" class="dev">Разработано в <strong>Mitroliti</strong>.</a>
                             </div>
                         </div>
                     </div>
@@ -731,7 +731,7 @@ if ( ! function_exists( 'hook_callback' ) ) {
                     <div class="popup__container">
                         <?php echo do_shortcode('[contact-form-7 id="6" title="Заказать обратный звонок"]'); ?>
                     </div>
-                    <div class="popup__footer"><p class="popup-form__privacy"><span>Нажимая кнопку вы соглашаетесь с условиями <a href="#">Политика конфиденциальности</a></span></p></div>
+                    <div class="popup__footer"><p class="popup-form__privacy"><span>Нажимая кнопку вы соглашаетесь с условиями <a href="<?php echo site_url( '/privacy' ); ?>">Политика конфиденциальности</a></span></p></div>
                 </div>
             </div>
         <?php

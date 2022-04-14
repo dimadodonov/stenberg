@@ -1,3 +1,108 @@
+.wpcf7 {
+    position: relative;
+
+    &__wrap {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    &__col {
+        margin: 0 15px;
+
+        &:first-child {
+            width: calc(40% - 30px);
+
+            @include xs-block() {
+                width: calc(100% - 30px);
+            }
+        }
+
+        &:last-child {
+            width: calc(60% - 30px);
+
+            @include xs-block() {
+                width: calc(100% - 30px);
+            }
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        margin-bottom: 60px;
+
+        .btn {
+            max-width: 285px;
+            height: 60px;
+            padding: 15px 45px;
+            font-size: 22px;
+            line-height: 27px;
+        }
+    }
+
+    input[type='tel'],
+    input[type='email'],
+    input[type='text'] {
+        box-sizing: border-box;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(162, 190, 150, 0.5);
+        background: rgba(241, 241, 241, 0.4);
+
+        @include placeholder() {
+            color: rgba(0, 0, 0, 1);
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+
+    br {
+        display: none;
+    }
+
+    .wpcf7-form-control-wrap {
+        position: relative;
+        display: flex;
+    }
+
+    .wpcf7-not-valid-tip {
+        position: absolute;
+        display: none;
+    }
+
+    .wpcf7-not-valid {
+        position: relative;
+        border: 1px solid red !important;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background-color: red;
+        }
+    }
+
+    textarea {
+        width: 100%;
+        margin-bottom: 30px;
+        border: 1px solid rgba(162, 190, 150, 0.5);
+        background: rgba(241, 241, 241, 0.4);
+        min-height: 150px;
+
+        @include placeholder() {
+            color: rgba(0, 0, 0, 1);
+            font-size: 18px;
+            line-height: 22px;
+        }
+    }
+}
+
 .grid {
     margin-right: -15px;
     margin-left: -15px;

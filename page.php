@@ -121,6 +121,59 @@ $post_id = get_the_ID();
 						<div id="map" class="map"></div>
 					</section>
 				<?php endif;
+				
+				if(is_page('faq')) : ?>
+					<div class="faq">
+						<div class="container">
+							<div class="faq__wrap">
+								<div class="faq__item faq__question">
+									<div class="faq-title">Вопрос:</div>
+									<div class="faq-content">А почему я не вижу у вас на сайте прайс-лист?</div>
+								</div>
+								<div class="faq__item faq__answer">
+									<div class="faq-title">Ответ:</div>
+									<div class="faq-content">Большинство нашей продукции - проектный материал и стоимость зависит от многих факторов. Если вас интересует конкретный материал или конкретная группа товара - мы без проблем проконсультируем вас по ценам.</div>
+								</div>
+								<div class="faq__item faq__question">
+									<div class="faq-title">Вопрос:</div>
+									<div class="faq-content">Подскажите, как монтируются ваши панели?</div>
+								</div>
+								<div class="faq__item faq__answer">
+									<div class="faq-title">Ответ:</div>
+									<div class="faq-content">В нашем ассортименте большое количество панелей. По многим  есть инструкции в разделе Информация. Если вы чего то не нашли - обращайтесь к нашим менеджерам.</div>
+								</div>
+								<div class="faq__item faq__question">
+									<div class="faq-title">Вопрос:</div>
+									<div class="faq-content">Есть ли у вас сертификаты на продукцию?</div>
+								</div>
+								<div class="faq__item faq__answer">
+									<div class="faq-title">Ответ:</div>
+									<div class="faq-content">Вся наша продукция прошла сертификацию в РФ. При отгрузке с комплектом документов мы вам выдаем также и сертификаты пожарной опасности сертификаты гигиены.</div>
+								</div>
+								<div class="faq__item faq__question">
+									<div class="faq-title">Вопрос:</div>
+									<div class="faq-content">Добрый день! Нам нужно рассчитать площадь панелей на наш офис . Как это сделать?</div>
+								</div>
+								<div class="faq__item faq__answer">
+									<div class="faq-title">Ответ:</div>
+									<div class="faq-content">Вы можете отправить на нашу почту развертки по стенам, визуализации и чертежи. Наш специалист при получении рассмотрит эти материалы, сделает примерный расчет и свяжется с вами.</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ask">
+						<div class="container">
+							<div class="ask__title">
+								<h2>Задайте вопрос</h2>
+							</div>
+							<div class="ask__wrap">
+								<div class="ask__form">
+									<?php echo do_shortcode( '[contact-form-7 id="109" title="Задайте вопрос"]' ); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				<?php endif;
 
 				if(is_page('price')) : ?>
 					<div class="price">

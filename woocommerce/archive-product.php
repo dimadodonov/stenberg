@@ -28,86 +28,120 @@ get_header( 'shop' );
  */
 do_action( 'woocommerce_before_main_content' );
 ?>
-
-<div class="products background-pixel">
-	<div class="container">
-	<?php 
-		if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
-		}
-	?>
-	<div class="products-title">
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
-			<h1><?php echo woocommerce_page_title(); ?></h1>			
-		<?php endif; ?>
-	</div>
-	<?php
-		if ( woocommerce_product_loop() ) {
-
-			/**
-			 * Hook: woocommerce_before_shop_loop.
-			 *
-			 * @hooked woocommerce_output_all_notices - 10
-			 * @hooked woocommerce_result_count - 20
-			 * @hooked woocommerce_catalog_ordering - 30
-			 */
-			do_action( 'woocommerce_before_shop_loop' );
-
-			woocommerce_product_loop_start();
-
-			if ( wc_get_loop_prop( 'total' ) ) {
-				while ( have_posts() ) {
-					the_post();
-
-					/**
-					 * Hook: woocommerce_shop_loop.
-					 */
-					do_action( 'woocommerce_shop_loop' );
-
-					wc_get_template_part( 'content', 'product' );
+	<div class="archive-category category-row background-pixel">
+		<div class="container">
+			<?php 
+				if ( function_exists('yoast_breadcrumb') ) {
+					yoast_breadcrumb( '<div class="breadcrumbs">','</div>' );
 				}
-			}
-
-			woocommerce_product_loop_end();
-
-			/**
-			 * Hook: woocommerce_after_shop_loop.
-			 *
-			 * @hooked woocommerce_pagination - 10
-			 */
-			do_action( 'woocommerce_after_shop_loop' );
-			
-		} else {
-			/**
-			 * Hook: woocommerce_no_products_found.
-			 *
-			 * @hooked wc_no_products_found - 10
-			 */
-			// do_action( 'woocommerce_no_products_found' );
 			?>
-				<div class="products__nofound">
-					<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--nofound"/></svg>
-					<h2>Товаров, соответствующих вашему запросу, не обнаружено</h2>
-				</div>
-			<?php
-		}
-	?>
-	</div>
-</div>
+			<div class="archive-category__title">
+				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+					<h1><?php echo woocommerce_page_title(); ?></h1>			
+				<?php endif; ?>
+			</div>
+			<div class="category-row-row__wrap">
+				<div class="category-row__inner">
 
-<section class="section section-seo">
-	<div class="container">
-		<?php
-			/**
-			 * Hook: woocommerce_archive_description.
-			 *
-			 * @hooked woocommerce_taxonomy_archive_description - 10
-			 * @hooked woocommerce_product_archive_description - 10
-			 */
-			do_action( 'woocommerce_archive_description' );
-		?>
+					<a class="category-row-card" href="#">
+						<div class="category-row-card__image">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card.jpg" alt="">
+						</div>
+						<div class="category-row-card__wrap">
+							<div class="category-row-card__title">Негорючие и огнестойкие панели</div>
+							<div class="category-row-card__link">
+								<span>Подробнее</span>
+								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+							</div>
+						</div>
+					</a>
+
+					<a class="category-row-card" href="#">
+						<div class="category-row-card__image">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__two.jpg" alt="">
+						</div>
+						<div class="category-row-card__wrap">
+							<div class="category-row-card__title">Акустические <br>панели</div>
+							<div class="category-row-card__link">
+								<span>Подробнее</span>
+								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+							</div>
+						</div>
+					</a>
+
+					<a class="category-row-card" href="#">
+						<div class="category-row-card__image">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__tree.jpg" alt="">
+						</div>
+						<div class="category-row-card__wrap">
+							<div class="category-row-card__title">Декоративные <br>панели</div>
+							<div class="category-row-card__link">
+								<span>Подробнее</span>
+								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+							</div>
+						</div>
+					</a>
+
+					<a class="category-row-card" href="#">
+						<div class="category-row-card__image">
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/category/category-card__four.jpg" alt="">
+						</div>
+						<div class="category-row-card__wrap">
+							<div class="category-row-card__title">3Д панели <br>для стен</div>
+							<div class="category-row-card__link">
+								<span>Подробнее</span>
+								<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
+							</div>
+						</div>
+					</a>
+
+				</div>
+			</div>
+		</div>
 	</div>
-</section>
+	<div class="catalog background-pixel">
+		<div class="container">
+			<div class="catalog__wrap">
+				<h2>Применение панелей в интерьере</h2>
+				<p>Поиск оригинальных решений обеспечивает постоянное расширение предложений на рынке. Тем не менее, уже в силу производства большинство стандартных образцов ограничено в формах и рельефе. Когда дело касается симуляции природного окружения и вовсе предложение становится предельно ограниченным из-за сложности массового изготовления уникальных форм. Положенные в основу нашей продукции технологии и материалы открывают качественно новый уровень отделки. Каталог панелей содержит десятки впечатляющих образцов. Естественные материалы при грамотной обработке обеспечивают создание неповторимых форм. Продуманные производственные схемы позволяют оптимально сочетать естественные материалы и высококачественную устойчивую основу.</p>
+				<p>Разумеется, использование таких нерядовых материалов в интерьере требует тщательно продуманного и эргономичного дизайна. При условии соблюдения всех нюансов работы, такая отделка даже при ограниченном использовании способна стать настоящей изюминой любого дома, офиса или рабочего кабинета, а масштабное применение подарит восхитительный интерьер любому заведению. Задумываетесь о создании уникального интерьера с минимальными затратами? Мы готовы предоставить наиболее стильные решения.</p>
+
+				<div class="catalog-gallery">
+					<div class="catalog-gallery__item">
+						<a href="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.jpg" data-fancybox="gallery">
+							<picture>
+								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.webp" type="image/webp">
+								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.jpg" type="image/jpg">
+								<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.jpg" alt="<?php echo get_the_title(); ?>">
+							</picture>
+						</a>
+					</div>
+					<div class="catalog-gallery__item">
+						<a href="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.jpg" data-fancybox="gallery">
+							<picture>
+								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.webp" type="image/webp">
+								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.jpg" type="image/jpg">
+								<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.jpg" alt="<?php echo get_the_title(); ?>">
+							</picture>
+						</a>
+					</div>
+					<div class="catalog-gallery__item">
+						<a href="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.jpg" data-fancybox="gallery">
+							<picture>
+								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.webp" type="image/webp">
+								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.jpg" type="image/jpg">
+								<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.jpg" alt="<?php echo get_the_title(); ?>">
+							</picture>
+						</a>
+					</div>
+				</div>
+
+				<h2>Установка и монтаж панелей Стенберг</h2>
+				<p>При том, что поверхность декоративных панелей отличается уникальной формой, текстурой и составом, сама конструкция является стандартной и полностью совместима с традиционными методиками, инструментами и материалами сборки декоративных секций. Использование каркаса или обрешётки позволяет собирать конструкции практически любых форм и конфигураций. Это особенно востребовано для рельефных образцов, которые при необходимости сами могут быть собраны в виде простой плоской или объёмной геометрической конструкции. Наш каталог панелей содержит варианты на любой вкус, при этом каждая модель предельно проста и удобна в монтаже.</p>
+				<p>Поддерживается использование любых типов стандартных метизов, кляймеров и крепёжных сегментов. Панели собираются на обрешётке последовательно, взаимно перекрывая крепежи. Учитывая, что работы подразумевают проверенные схемы сборки, а сами сегменты поддерживают резку и обработку, профессионалы способны справиться со сборкой в предельно сжатые сроки, обеспечить качественный внешний вид и надёжность конструкции. Мы предоставляем полную поддержку клиентам на всех этапах сотрудничества, обращайтесь по указанному на сайте номеру прямо сейчас и получите исчерпывающую информацию касательно возможностей и эксплуатационного потенциала продукции.</p>
+			</div>
+		</div>
+	</div>
 <?php
 
 /**

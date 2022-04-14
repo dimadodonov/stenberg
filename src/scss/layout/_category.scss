@@ -1,6 +1,15 @@
+.archive-category {
+    h1 {
+        margin-bottom: 50px;
+        font-family: $f-semibold;
+        font-size: 64px;
+        font-weight: normal;
+        line-height: 76px;
+    }
+}
+
 .category-row {
     position: relative;
-    margin-top: -20px;
     padding-bottom: 50px;
 
     &__wrap {

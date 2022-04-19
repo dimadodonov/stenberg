@@ -63,7 +63,7 @@ $post_id = get_the_ID();
 										</div>
 										<div class="contacts__block contacts__phone">
 											<div class="contacts__phone--wrap">
-												<ins>+7 (910) 486-70-70</ins>
+												<a href="tel:89104867070"><ins>+7 (910) 486-70-70</ins></a><br>
 												<div class="contacts__mes messenger">
 													<div class="messenger__wrap">
 														<a class="messenger__item whatsapp" href="" title="whatsapp">
@@ -74,6 +74,10 @@ $post_id = get_the_ID();
 														</a>
 													</div>
 												</div>
+											</div>
+											<div class="contacts__phone--wrap contacts__phone--list">
+												<a href="tel:88003014632"><ins>8 (800) 301-46-32,</ins></a>
+												<a href="tel:84951252579"><ins>8 (495) 125-25-79</ins></a>
 											</div>
 											<span>Ответим на вопросы оперативно</span>
 										</div>

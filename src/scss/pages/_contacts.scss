@@ -96,6 +96,22 @@
             flex-wrap: wrap;
             align-items: center;
         }
+
+        &--list {
+            margin-top: 15px;
+
+            a:first-child {
+                margin-right: 10px;
+            }
+        }
+
+        a {
+            color: #000;
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
     }
 
     &__mes {

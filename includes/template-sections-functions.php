@@ -41,6 +41,7 @@ if ( ! function_exists( 'hook_header' ) ) {
             <div class="header-stiky__phone">
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
                 <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
+                <a class="header-phone__num" href="tel:84951252579">8 (495) 125-25-79</a>
             </div>
         </div>
     </div>
@@ -60,9 +61,9 @@ if ( ! function_exists( 'hook_header' ) ) {
                 <?php endif; ?>
                 
                 </div>
-                <div class="header__desc">Стеновые панели и интерьерные решения</div>
+                <!-- <div class="header__desc">Стеновые панели и интерьерные решения</div> -->
             </div>
-            <div class="header__block header__adress">
+            <div class="header__block header__adress header__border">
                 <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--adress"/></svg>
                 <span>г. Москва, Шоссе Энтузиастов, <br>д. 31, стр. 39, 2 этаж, офис 5</span>
             </div>
@@ -83,8 +84,11 @@ if ( ! function_exists( 'hook_header' ) ) {
                 </div>
             </div>
             <div class="header-phone header__block header__border">
+                <div class="header-phone__inner">
+                    <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
+                    <a class="header-phone__num" href="tel:84951252579">8 (495) 125-25-79</a>
+                </div>
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
-                <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
             </div>
         </div>
     </header>

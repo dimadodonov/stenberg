@@ -17,7 +17,12 @@ if ( ! function_exists( 'ep_start_loop' ) ) {
                 <div class="products-filter">
                     <?php
                         if(!is_shop())  :
-                            echo do_shortcode( '[br_filter_single filter_id=1302]' ); // Категории товаров
+                            echo do_shortcode( '[br_filter_single filter_id=116]' ); // Основа панели
+                            echo do_shortcode( '[br_filter_single filter_id=117]' ); // Размер, мм
+                            echo do_shortcode( '[br_filter_single filter_id=118]' ); // Толщина, мм
+                            echo do_shortcode( '[br_filter_single filter_id=114]' ); // Огнестойкость
+                            echo do_shortcode( '[br_filter_single filter_id=112]' ); // Применить фильтр
+                            echo do_shortcode( '[br_filter_single filter_id=113]' ); // Очистить фильтр
                         endif;
                     ?>
                 </div>

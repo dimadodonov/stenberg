@@ -101,6 +101,61 @@ if ( ! function_exists( 'projects_cat' ) ) {
 
 }
 
+
+
+if ( ! function_exists( 'colors_post_type' ) ) {
+
+	// Register Custom Post Type
+	function colors_post_type() {
+
+		$labels = array(
+			'name'                  => _x( 'Цвет панелей', 'Post Type General Name', 'mitroliti' ),
+			'singular_name'         => _x( 'Цвет панелей', 'Post Type Singular Name', 'mitroliti' ),
+			'menu_name'             => __( 'Цвет панелей', 'mitroliti' ),
+			'name_admin_bar'        => __( 'Цвет', 'mitroliti' ),
+			'archives'              => __( 'Item Archives', 'mitroliti' ),
+			'parent_item_colon'     => __( 'Parent Item:', 'mitroliti' ),
+			'all_items'             => __( 'Все цвета', 'mitroliti' ),
+			'add_new_item'          => __( 'Добавить новый цвет', 'mitroliti' ),
+			'add_new'               => __( 'Добавить цвет', 'mitroliti' ),
+			'new_item'              => __( 'Новый цвет', 'mitroliti' ),
+			'edit_item'             => __( 'Редактировать цвет', 'mitroliti' ),
+			'update_item'           => __( 'Обновить цвет', 'mitroliti' ),
+			'view_item'             => __( 'Посмотреть цвет', 'mitroliti' ),
+			'search_items'          => __( 'Поиск цвета', 'mitroliti' ),
+			'not_found'             => __( 'Не найден', 'mitroliti' ),
+			'not_found_in_trash'    => __( 'Цветов корзине не найдено', 'mitroliti' )
+		);
+
+		$args = array(
+			'label'                 => __( 'Цвет панелей', 'mitroliti' ),
+			'labels'                => $labels,
+			'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+			// 'taxonomies'            => array( 'category', 'post_tag' ),
+			'hierarchical'          => false,
+			'public'                => false,
+			'show_ui'               => true,
+			'show_in_menu'          => true,
+			'menu_position'         => 20,
+			'menu_icon'             => 'dashicons-admin-appearance',
+			'show_in_admin_bar'     => true,
+			'show_in_nav_menus'     => true,
+			'can_export'            => true,
+			'has_archive'           => false,
+			'exclude_from_search'   => false,
+			'publicly_queryable'    => true,
+			'capability_type'       => 'post',
+			'show_in_rest'          => true,
+		);
+		
+		register_post_type( 'panel_colors', $args );
+
+	}
+
+	add_action( 'init', 'colors_post_type', 0 );
+
+}
+
 /**
  * Display a custom taxonomy dropdown in admin
  * @author Mike Hemberger

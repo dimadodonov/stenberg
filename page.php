@@ -37,10 +37,24 @@ $post_id = get_the_ID();
 			</div>
 			
 			<?php
-				if(is_page('contacts')) : ?>
+				if(is_page('contacts')) : 
+				$contact_adres = get_field('contact_adres', 'option');
+				$contact_phone_mobile = get_field('contact_phone_mobile', 'option');
+				$contact_phone_msk = get_field('contact_phone_msk', 'option');
+				$contact_phone_region = get_field('contact_phone_region', 'option');
+				$contact_email = get_field('contact_email', 'option');
+				$contact_email_manager = get_field('contact_email_manager', 'option');
+				$contact_email_buh = get_field('contact_email_buh', 'option');
+				$contact_worktime = get_field('contact_worktime', 'option');
+				$contact_worktime_desc = get_field('contact_worktime_desc', 'option');
+				$contact_mess_whatsapp = get_field('contact_mess_whatsapp', 'option');
+				$contact_mess_viber = get_field('contact_mess_viber', 'option');
+				$contact_mess_telegram = get_field('contact_mess_telegram', 'option');
+				?>
 					<div class="contacts">
 						<div class="container">
 							<div class="contacts__wrap">
+								<?php if($contact_adres) : ?>
 								<div class="contacts__col">
 									<div class="contacts__item">
 										<div class="contacts__subtitle">
@@ -48,7 +62,7 @@ $post_id = get_the_ID();
 										</div>
 										<div class="contacts__block contacts__adress">
 											<ins>МОСКВА</ins>
-											<span>Электродный проезд, 6с1, 111123</span>
+											<span><?php echo $contact_adres; ?></span>
 											<a class="contacts__link" href="#section_map">
 												<span>посмотреть на карте</span>
 												<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--arrow-next"/></svg>
@@ -56,68 +70,110 @@ $post_id = get_the_ID();
 										</div>
 									</div>
 								</div>
+								<?php endif; ?>
+								
+								<?php if($contact_phone_mobile || $contact_phone_msk || $contact_phone_region ) : ?>
 								<div class="contacts__col">
 									<div class="contacts__item">
 										<div class="contacts__subtitle">
 											Номер телефона
 										</div>
 										<div class="contacts__block contacts__phone">
+											<?php if($contact_phone_mobile) : ?>
 											<div class="contacts__phone--wrap">
-												<a href="tel:89104867070"><ins>+7 (910) 486-70-70</ins></a><br>
-												<div class="contacts__mes messenger">
-													<div class="messenger__wrap">
-														<a class="messenger__item whatsapp" href="" title="whatsapp">
-															<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
-														</a>
-														<a class="messenger__item viber" href="" title="viber">
-															<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
-														</a>
+												<a href="tel:<?php echo $contact_phone_mobile; ?>"><ins><?php echo $contact_phone_mobile; ?></ins></a><br>
+												<?php if( $contact_mess_whatsapp || $contact_mess_viber || $contact_mess_telegram ) : ?>
+													<div class="contacts__mes messenger">
+														<div class="messenger__wrap">
+															<?php if( $contact_mess_whatsapp ) :
+																$phone_whatsapp = preg_replace('![^0-9]+!', '', $contact_mess_whatsapp); ?>
+																<a class="messenger__item whatsapp" target="_blank" href="https://wa.me/<?php echo $phone_whatsapp; ?>" title="whatsapp">
+																	<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
+																</a>
+															<?php endif; ?>
+															<?php if( $contact_mess_viber ) : 
+																$phone_viber = preg_replace('![^0-9]+!', '', $contact_mess_viber); ?>
+																<a class="messenger__item viber" href="viber://chat?number=<?php echo $phone_viber; ?>" title="viber">
+																	<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
+																</a>
+															<?php endif; ?>
+															<?php if( $contact_mess_telegram ) : ?>
+																<a class="messenger__item telegram" href="<?php echo $contact_mess_telegram; ?>" target="_blank" title="telegram">
+																	<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
+																</a>
+															<?php endif; ?>
+														</div>
 													</div>
-												</div>
+												<?php endif; ?>
 											</div>
+											<?php endif; ?>
+											<?php if($contact_phone_msk || $contact_phone_region) : ?>
 											<div class="contacts__phone--wrap contacts__phone--list">
-												<a href="tel:88003014632"><ins>8 (800) 301-46-32,</ins></a>
-												<a href="tel:84951252579"><ins>8 (495) 125-25-79</ins></a>
+												<?php if($contact_phone_region) : ?>
+													<a href="tel:<?php echo $contact_phone_region; ?>"><ins><?php echo $contact_phone_region; ?>,</ins></a>
+												<?php endif; ?>
+												
+												<?php if($contact_phone_msk) : ?>
+													<a href="tel:<?php echo $contact_phone_msk; ?>"><ins><?php echo $contact_phone_msk; ?></ins></a>
+												<?php endif; ?>
 											</div>
+											<?php endif; ?>
 											<span>Ответим на вопросы оперативно</span>
 										</div>
 									</div>
+									<?php if($contact_worktime || $contact_worktime_desc) : ?>
 									<div class="contacts__item">
 										<div class="contacts__subtitle">
 											Глафик работы
 										</div>
 										<div class="contacts__block contacts__worktime">
-											<ins>Пн-Чт 09:00-18:00 - Пт 09:00-17:00</ins>
-											<span>Сб-Вс дежурный консультант 11:00-17:00 по телефону </span>
+											<ins><?php echo $contact_worktime; ?></ins>
+											<span><?php echo $contact_worktime_desc; ?></span>
 										</div>
 									</div>
+									<?php endif; ?>
 								</div>
+								<?php endif; ?>
+								<?php if($contact_email || $contact_email_manager || $contact_email_buh) : ?>
 								<div class="contacts__col contacts__email">
+									<?php if($contact_email) :?>
 									<div class="contacts__item">
 										<div class="contacts__subtitle">
 											Электронная почта
 										</div>
 										<div class="contacts__block">
-											<a href=""><ins>info@sbpaneli.ru</ins></a>
+											<a href="mailto:<?php echo $contact_email; ?>"><ins><?php echo $contact_email; ?></ins></a>
 										</div>
 									</div>
+									<?php 
+										endif;
+										if($contact_email_manager) :
+									?>
 									<div class="contacts__item">
 										<div class="contacts__subtitle">
 											Отдел продаж
 										</div>
 										<div class="contacts__block">
-											<a href=""><ins>zakaz@sbpaneli.ru</ins></a>
+											<a href="mailto:<?php echo $contact_email_manager; ?>"><ins><?php echo $contact_email_manager; ?></ins></a>
 										</div>
 									</div>
+									<?php 
+										endif;
+										if($contact_email_buh) :
+									?>
 									<div class="contacts__item">
 										<div class="contacts__subtitle">
 											Отдел бухгалтерии
 										</div>
 										<div class="contacts__block">
-											<a href=""><ins>buh@sbpaneli.ru</ins></a>
+											<a href="mailto:<?php echo $contact_email_buh; ?>"><ins><?php echo $contact_email_buh; ?></ins></a>
 										</div>
 									</div>
+									<?php 
+										endif;
+									?>
 								</div>
+								<?php endif; ?>
 							</div>
 						</div>
 					</div>

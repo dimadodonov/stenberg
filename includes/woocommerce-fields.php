@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH')) {
  * @link https://wpruse.ru/woocommerce/custom-fields-in-products/
  */
 
-add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_custom_fields' );
+// add_action( 'woocommerce_product_options_general_product_data', 'art_woo_add_custom_fields' );
 
 function art_woo_add_custom_fields() {
     global $product, $post;
@@ -31,7 +31,7 @@ function art_woo_add_custom_fields() {
     echo '</div>';
 }
 
-add_action( 'woocommerce_process_product_meta', 'nm_woo_custom_fields_save', 10 );
+// add_action( 'woocommerce_process_product_meta', 'nm_woo_custom_fields_save', 10 );
 function nm_woo_custom_fields_save( $post_id ) {
 
     // Вызываем объект класса

@@ -10,7 +10,7 @@ Please be sure that this is something that you want to do before implementing th
 
 // this action is run by ACF whenever a field is deleted
 // and is called for every field in a field group when a field group is deleted
-// add_action('acf/delete_field', 'delete_acf_content_on_delete_field'); // Разкомментировать для использования
+add_action('acf/delete_field', 'delete_acf_content_on_delete_field'); // Разкомментировать для использования
 
 function delete_acf_content_on_delete_field($field) {
   // runs when acf deletes a field

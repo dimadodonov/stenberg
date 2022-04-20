@@ -33,7 +33,7 @@ class WPSL_Thumb {
 	 */
 	public function post_types() {
 		//$post_types = get_post_types( array( 'public' => true ) );
-		$post_types = array( 'post', 'projects');
+		$post_types = array( 'post', 'projects', 'panel_colors');
 		return $post_types;
 	}
 

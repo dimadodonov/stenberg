@@ -6,7 +6,7 @@ export default () => {
             var myMap = new ymaps.Map(
                 'map',
                 {
-                    center: [51.999632, 47.817394],
+                    center: [55.762738, 37.751278],
                     zoom: 16,
                     controls: [],
                     behaviors: [
@@ -23,15 +23,15 @@ export default () => {
 
             myMap.geoObjects.add(
                 new ymaps.Placemark(
-                    [51.999632, 47.817394],
+                    [55.762738, 37.751278],
                     {
                         // Чтобы балун и хинт открывались на метке, необходимо задать ей определенные свойства.
-                        balloonContentHeader: 'Эко-прайс',
+                        balloonContentHeader: 'StenbergPro',
                         balloonContentBody:
-                            'Саратовская область, г.Балаково, ул.Транспортная, д. 3А/2',
+                            'г. Москва, Электродный проезд, 6с1, 6 этаж, офис 18',
                         balloonContentFooter:
-                            'Телефон: +7 937 029-07-77 <br>Доп.телефон: +7 927 053-12-12 <br> E-mail: info@eco-price.ru',
-                        hintContent: 'Эко-прайс',
+                            'Телефон: <a href="88003014632">8 (800) 301-46-32</a> <br> Для москвы: <a href="84951252579">8 (495) 125-25-79</a>, Доп.телефон: <a href="+79104867070">+7 (910) 486-70-70</a><br> E-mail: <a href="mailto:info@sbpaneli.ru">info@sbpaneli.ru</a>',
+                        hintContent: 'StenbergPro',
                     },
                     {
                         // Опции.

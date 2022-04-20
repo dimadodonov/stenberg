@@ -293,10 +293,32 @@
             width: calc(1 / 4 * 100% - 28px);
             height: auto;
             margin: 0 14px 28px;
+
+            img {
+                height: auto;
+            }
+        }
+
+        &__info {
+            ins {
+                font-family: $f-semibold;
+                text-decoration: none;
+            }
         }
 
         h3 {
             margin-bottom: 30px;
+        }
+    }
+
+    &-video {
+        &__info {
+            margin-top: 10px;
+
+            ins {
+                font-family: $f-semibold;
+                text-decoration: none;
+            }
         }
     }
 

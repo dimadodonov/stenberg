@@ -127,10 +127,10 @@ if ( post_password_required() ) {
 				?>
 				<div class="product-title"><h1><?php echo $product->get_title(); ?></h1></div>
 				<div class="product-price">
-					Цена: <strong>от 275 руб. за м2</strong>
+					Цена: <strong>от <?php echo $product->get_price(); ?> руб. за м2</strong>
 				</div>
 				<div class="product-order">
-					<div class="product-order__btn btn btn-accent">Оставить заявку</div>
+					<div class="product-order__btn btn btn-accent initpopup" data-popup="productOrder">Оставить заявку</div>
 				</div>
 				
 				<div class="product-attr">
@@ -212,46 +212,59 @@ if ( post_password_required() ) {
 				<div class="product-colors">
 					<h3>Варианты цветовых решений</h3>
 					<div class="product-colors__wrap">
-						<div class="product-colors__item">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-colors.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-						</div>
-						<div class="product-colors__item">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-colors.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-						</div>
-						<div class="product-colors__item">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-colors.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-						</div>
-						<div class="product-colors__item">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-colors.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-						</div>
-						<div class="product-colors__item">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-colors.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-						</div>
-						<div class="product-colors__item">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-colors.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-						</div>
+						<?php 
+							$product_panel_colors = get_field('product_panel_colors');
+							
+							if($product_panel_colors) :
+								foreach($product_panel_colors as $colors) :
+									$attachment_id = get_post_thumbnail_id($colors);
+									$attachment = wp_get_attachment_image($attachment_id, 'thumbnail'); 
+								?>
+								<div class="product-colors__item">
+									<?php echo $attachment; ?>
+								</div>
+								<?php endforeach;
+							endif;
+						?>
+					</div>
+					<div class="product-colors__info">
+						<small><ins>Внимание!</ins> Цвет на экране Вашего монитора может отличаться от фактического. Поэтому перед заказом рекомендуем посмотреть реальный образец. Для этого позвоните нам, и мы договоримся.</small>
 					</div>
 				</div>
 
+				<?php
+				 $attachment = get_field('attachment');
+
+				 if($attachment) :
+				?>
 				<div class="product-bracing">
 					<a href="#">
 						<h3>Система крепления</h3>
 						<div class="product-bracing__wrap">
-								<div class="product-bracing__img">
-									<picture>
-										<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-bracing.webp" type="image/webp">
-										<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-bracing.jpg" type="image/jpg">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-bracing.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
-									</picture>
-								</div>
-								<div class="product-bracing__title">На подготовленный металлокаркас с  использованием декоративных профилей Омега, Пи, L (внутренний), F (внешний)</div>
+							<div class="product-bracing__img">
+								<picture>
+									<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-bracing.webp" type="image/webp">
+									<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-bracing.jpg" type="image/jpg">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/page/product/product-bracing.jpg" alt="<?php echo get_bloginfo( 'title' ); ?>">
+								</picture>
+							</div>
+							<div class="product-bracing__title">На подготовленный металлокаркас с  использованием декоративных профилей Омега, Пи, L (внутренний), F (внешний)</div>
 						</div>
 					</a>
 				</div>
+				<?php endif; ?>
+				<?php
+					$video_instruction = get_field('video_instruction');
+					if( $video_instruction ) :
+				?>
 				<h3>Технология монтажа гипсокартонных панелей ламинированных пленкой ПВХ</h3>
-				<div class="project-video__player video__player">
+				<div class="product-video__player video__player">
 					<iframe width="1280" height="937" src="https://www.youtube.com/embed/fNsIMqvzWhI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
+				<div class="product-video__info">
+					<small>Видео было взято для ознакомления с YouTube канала <ins>Deco Lam</ins></small>
+				</div>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

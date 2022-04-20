@@ -8,7 +8,16 @@ if ( ! function_exists( 'hook_header' ) ) {
     /**
      * Display Hooks Header
      */
-    function hook_header() { ?>
+    function hook_header() { 
+    
+        $contact_adres = get_field('contact_adres', 'option');
+        $contact_phone_msk = get_field('contact_phone_msk', 'option');
+        $contact_phone_region = get_field('contact_phone_region', 'option');
+        $contact_mess_whatsapp = get_field('contact_mess_whatsapp', 'option');
+        $contact_mess_viber = get_field('contact_mess_viber', 'option');
+        $contact_mess_telegram = get_field('contact_mess_telegram', 'option');
+
+    ?>
     <div class="header-stiky">
         <div class="header-stiky__wrap">
             <div class="header-stiky__logo">
@@ -25,19 +34,29 @@ if ( ! function_exists( 'hook_header' ) ) {
             <div class="header-stiky__nav">
                 <?php header_menu_primary(); ?>
             </div>
-            <div class="header-stiky__mess">
-                <div class="messenger__wrap">
-                    <a class="messenger__item whatsapp" href="" title="Напишите нам в Whatsapp">
-                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
-                    </a>
-                    <a class="messenger__item viber" href="" title="Напишите нам в Viber">
-                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
-                    </a>
-                    <a class="messenger__item telegram" href="" title="Напишите нам в Telegram">
-                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
-                    </a>
+            <?php if( $contact_mess_whatsapp || $contact_mess_viber || $contact_mess_telegram ) : ?>
+                <div class="header-stiky__mess">
+                    <div class="messenger__wrap">
+                        <?php if( $contact_mess_whatsapp ) : 
+                            $phone_whatsapp = preg_replace('![^0-9]+!', '', $contact_mess_whatsapp); ?>
+                            <a class="messenger__item whatsapp" target="_blank" href="https://wa.me/<?php echo $phone_whatsapp; ?>" title="whatsapp">
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
+                            </a>
+                        <?php endif; ?>
+                        <?php if( $contact_mess_viber ) : 
+                            $phone_viber = preg_replace('![^0-9]+!', '', $contact_mess_viber); ?>
+                            <a class="messenger__item viber" href="viber://chat?number=%2B<?php echo $phone_viber; ?>" title="viber">
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
+                            </a>
+                        <?php endif; ?>
+                        <?php if( $contact_mess_telegram ) : ?>
+                            <a class="messenger__item telegram" href="<?php echo $contact_mess_telegram; ?>" target="_blank" title="telegram">
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
+                            </a>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
+            <?php endif; ?>
             <div class="header-stiky__phone">
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
                 <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
@@ -63,33 +82,51 @@ if ( ! function_exists( 'hook_header' ) ) {
                 </div>
                 <!-- <div class="header__desc">Стеновые панели и интерьерные решения</div> -->
             </div>
+            <?php if($contact_adres) : ?>
             <div class="header__block header__adress header__border">
                 <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--adress"/></svg>
-                <span>г. Москва, Шоссе Энтузиастов, <br>д. 31, стр. 39, 2 этаж, офис 5</span>
+                <span><?php echo $contact_adres; ?></span>
             </div>
+            <?php endif; ?>
             <div class="header__block header__border header__mess">
                 <div class="messenger">
                     <span>Быстрый ответ <br>в мессенджерах</span>
+                    <?php if( $contact_mess_whatsapp || $contact_mess_viber || $contact_mess_telegram ) : ?>
                     <div class="messenger__wrap">
-                        <a class="messenger__item whatsapp" href="" title="Напишите нам в Whatsapp">
-                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
-                        </a>
-                        <a class="messenger__item viber" href="" title="Напишите нам в Viber">
-                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
-                        </a>
-                        <a class="messenger__item telegram" href="" title="Напишите нам в Telegram">
-                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
-                        </a>
+                        <?php if( $contact_mess_whatsapp ) : 
+                            $phone_whatsapp = preg_replace('![^0-9]+!', '', $contact_mess_whatsapp);?>
+                            <a class="messenger__item whatsapp" target="_blank" href="https://wa.me/<?php echo $phone_whatsapp; ?>" title="whatsapp">
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
+                            </a>
+                        <?php endif; ?>
+                        <?php if( $contact_mess_viber ) :
+                            $phone_viber = preg_replace('![^0-9]+!', '', $contact_mess_viber); ?>
+                            <a class="messenger__item viber" href="viber://chat?number=%2B<?php echo $phone_viber; ?>" title="viber">
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
+                            </a>
+                        <?php endif; ?>
+                        <?php if( $contact_mess_telegram ) : ?>
+                            <a class="messenger__item telegram" href="<?php echo $contact_mess_telegram; ?>" target="_blank" title="telegram">
+                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
+                            </a>
+                        <?php endif; ?>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
+            <?php if( $contact_phone_msk || $contact_phone_region ) : ?>
             <div class="header-phone header__block header__border">
                 <div class="header-phone__inner">
-                    <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
-                    <a class="header-phone__num" href="tel:84951252579">8 (495) 125-25-79</a>
+                    <?php if($contact_phone_region) : ?>
+                        <a class="header-phone__num" href="tel:<?php echo $contact_phone_region; ?>"><?php echo $contact_phone_region; ?></a>
+                    <?php endif; ?>
+                    <?php if($contact_phone_msk) : ?>
+                        <a class="header-phone__num" href="tel:<?php echo $contact_phone_msk; ?>"><?php echo $contact_phone_msk; ?></a>
+                    <?php endif; ?>
                 </div>
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
             </div>
+            <?php endif; ?>
         </div>
     </header>
     <?php }
@@ -108,7 +145,14 @@ if ( ! function_exists( 'hook_footer' ) ) {
     /**
      * Display Hooks Footer
      */
-    function hook_footer() { ?>
+    function hook_footer() {         
+            $contact_adres = get_field('contact_adres', 'option');
+            $contact_phone_msk = get_field('contact_phone_msk', 'option');
+            $contact_phone_region = get_field('contact_phone_region', 'option');
+            $contact_mess_whatsapp = get_field('contact_mess_whatsapp', 'option');
+            $contact_mess_viber = get_field('contact_mess_viber', 'option');
+            $contact_mess_telegram = get_field('contact_mess_telegram', 'option');
+        ?>
         <footer id="footer" class="footer">
             <div class="footer__top">
                 <div class="container">
@@ -134,28 +178,46 @@ if ( ! function_exists( 'hook_footer' ) ) {
                         <div class="footer-contacts">
                             <div class="footer-contacts__item">
                                 <div class="footer-contacts__callback initpopup" data-popup="callback">Заказать звонок</div>
-                                <div class="footer-contacts__phone">8 (495) 125-25-79</div>
-                                <div class="footer-contacts__phone">8 (800) 301-46-32</div>
+                                <?php if( $contact_phone_msk || $contact_phone_region ) :?>
+                                    <?php if( $contact_phone_msk ) :?>
+                                        <a href="tel:<?php echo $contact_phone_msk; ?>"><div class="footer-contacts__phone"><?php echo $contact_phone_msk; ?></div></a>
+                                    <?php endif; ?>
+                                    <?php if( $contact_phone_region ) :?>
+                                        <a href="tel:<?php echo $contact_phone_region; ?>"><div class="footer-contacts__phone"><?php echo $contact_phone_region; ?></div></a>
+                                    <?php endif; ?>
+                                <?php endif; ?>
                             </div>
+                            <?php if($contact_adres) : ?>
                             <div class="footer-contacts__item">
-                                <div class="footer-contacts__adress">г. Москва, Шоссе Энтузиастов, д. 31, стр. 39, 2 этаж, офис 5</div>
+                                <div class="footer-contacts__adress"><?php echo $contact_adres; ?></div>
                             </div>
+                            <?php endif; ?>
+                            <?php if( $contact_mess_whatsapp || $contact_mess_viber || $contact_mess_telegram ) : ?>
                             <div class="footer-contacts__item">
                                 <div class="messenger">
                                     <span>Быстрый ответ <br>в мессенджерах</span>
                                     <div class="messenger__wrap">
-                                        <a class="messenger__item whatsapp" href="" title="Напишите нам в Whatsapp">
-                                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
-                                        </a>
-                                        <a class="messenger__item viber" href="" title="Напишите нам в Viber">
-                                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
-                                        </a>
-                                        <a class="messenger__item telegram" href="" title="Напишите нам в Telegram">
-                                            <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
-                                        </a>
+                                        <?php if( $contact_mess_whatsapp ) : 
+                                            $phone_whatsapp = preg_replace('![^0-9]+!', '', $contact_mess_whatsapp);?>
+                                            <a class="messenger__item whatsapp" target="_blank" href="https://wa.me/<?php echo $phone_whatsapp; ?>" title="whatsapp">
+                                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-whatsapp"/></svg>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if( $contact_mess_viber ) : 
+                                            $phone_viber = preg_replace('![^0-9]+!', '', $contact_mess_viber); ?>
+                                            <a class="messenger__item viber" href="viber://chat?number=%2B<?php echo $phone_viber; ?>" title="viber">
+                                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-viber"/></svg>
+                                            </a>
+                                        <?php endif; ?>
+                                        <?php if( $contact_mess_telegram ) : ?>
+                                            <a class="messenger__item telegram" href="<?php echo $contact_mess_telegram; ?>" target="_blank" title="telegram">
+                                                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--mess-telegram"/></svg>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -738,6 +800,24 @@ if ( ! function_exists( 'hook_callback' ) ) {
                     <div class="popup__footer"><p class="popup-form__privacy"><span>Нажимая кнопку вы соглашаетесь с условиями <a href="<?php echo site_url( '/privacy' ); ?>">Политика конфиденциальности</a></span></p></div>
                 </div>
             </div>
+            <?php if(is_product()) : 
+                global $product; 
+            ?>
+            <div id="popup" class="popup popup-productOrder">
+                <div class="popup__overlay"></div>
+                <div class="popup__wrap">
+                    <div class="popup__close"><svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--close"/></svg></div>
+                    <div class="popup__header">
+                        <div class="popup__title">Заказать <?php echo $product->get_title(); ?></div>
+                        <div class="popup__subtitle">Просто оставьте телефон <br>и мы вам перезвоним</div>
+                    </div>
+                    <div class="popup__container">
+                        <?php echo do_shortcode('[contact-form-7 id="6" title="Заказать обратный звонок"]'); ?>
+                    </div>
+                    <div class="popup__footer"><p class="popup-form__privacy"><span>Нажимая кнопку вы соглашаетесь с условиями <a href="<?php echo site_url( '/privacy' ); ?>">Политика конфиденциальности</a></span></p></div>
+                </div>
+            </div>
+            <?php endif; ?>
         <?php
     }
 }

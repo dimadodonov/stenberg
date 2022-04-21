@@ -126,9 +126,14 @@ if ( post_password_required() ) {
 					}
 				?>
 				<div class="product-title"><h1><?php echo $product->get_title(); ?></h1></div>
+				<?php
+					$product_price = $product->get_price();
+					if($product_price) :
+				?>
 				<div class="product-price">
-					Цена: <strong>от <?php echo $product->get_price(); ?> руб. за м2</strong>
+					Цена: <strong>от <?php echo $product_price; ?> руб. за м2</strong>
 				</div>
+				<?php endif; ?>
 				<div class="product-order">
 					<div class="product-order__btn btn btn-accent initpopup" data-popup="productOrder">Оставить заявку</div>
 				</div>
@@ -190,20 +195,31 @@ if ( post_password_required() ) {
 				</div>
 			</div>
 			<div class="product__col left">
+				<?php
+					$product_use = the_field('product_use');
+					$product_egde = the_field('product_egde');
+
+					if( $product_use || $product_egde ) :
+				?>
 				<div class="product-edge">
+					<?php if( $product_use ) : ?>
 					<div class="product-edge__item">
 						<?php
 							echo '<h3>Область применения</h3>';
-							echo the_field('product_use');
+							echo $product_use;
 						?>
 					</div>
+					<?php endif; ?>
+					<?php if( $product_egde ) : ?>
 					<div class="product-edge__item">
 						<?php
 							echo '<h3>Особенности и преимущества</h3>';
-							echo the_field('product_egde');
+							echo $product_egde;
 						?>
 					</div>
+					<?php endif; ?>
 				</div>
+				<?php endif; ?>
 				<div class="product-desc">
 					<?php echo the_content(); ?>
 				</div>

@@ -482,16 +482,20 @@ if ( ! function_exists( 'hook_section_projects' ) ) {
 									<a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="projects-card">
 										<div class="projects-card__image">
 											<?php if ( has_post_thumbnail()) { ?>
-												<?php the_post_thumbnail('large'); ?>
+												<?php the_post_thumbnail('project'); ?>
 											<?php } else { ?>
 												<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
 											<?php } ?>
 										</div>
 										<div class="projects-card-desc">
 											<div class="projects-card-desc__inner">
-												<div class="projects-card-desc__icon">
-													<svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
-												</div>
+                                                <?php $projects_video = get_field('projects_video');
+                                                    if($projects_video) :
+                                                ?>
+                                                    <div class="projects-card-desc__icon">
+                                                        <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--play"/></svg>
+                                                    </div>
+                                                <?php endif; ?>
 												<div class="projects-card-desc__title"><?php echo get_the_title(); ?></div>
 											</div>
 											<div class="projects-card-desc__link"><span>Подробнее</span>

@@ -1,3 +1,47 @@
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .page-numbers {
+        padding: 5px 10px;
+        font-family: $f-semibold;
+        font-size: 24px;
+
+        &.current {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 41px;
+            height: 41px;
+            margin: 0 15px;
+            border-radius: 50%;
+            background-color: $color-accent;
+            color: #fff;
+        }
+
+        &.dots {
+            font-family: $f;
+        }
+
+        &.next,
+        &.prev {
+            color: rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                color: $color-accent;
+            }
+        }
+    }
+}
+
 .wpcf7 {
     position: relative;
 

@@ -27,6 +27,9 @@ const smartGridConfig = {
         fields: '20px',
     },
     breakPoints: {
+        hd: {
+            width: '1500px' /* -> @media (max-width: 1100px) */,
+        },
         lg: {
             width: '1366px' /* -> @media (max-width: 1100px) */,
         },

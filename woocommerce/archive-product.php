@@ -62,7 +62,7 @@ do_action( 'woocommerce_before_main_content' );
 							<picture>
 								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.webp" type="image/webp">
 								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.jpg" type="image/jpg">
-								<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.jpg" alt="<?php echo get_the_title(); ?>">
+								<img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-1.jpg" alt="<?php echo get_the_title(); ?>">
 							</picture>
 						</a>
 					</div>
@@ -71,7 +71,7 @@ do_action( 'woocommerce_before_main_content' );
 							<picture>
 								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.webp" type="image/webp">
 								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.jpg" type="image/jpg">
-								<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.jpg" alt="<?php echo get_the_title(); ?>">
+								<img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-2.jpg" alt="<?php echo get_the_title(); ?>">
 							</picture>
 						</a>
 					</div>
@@ -80,7 +80,7 @@ do_action( 'woocommerce_before_main_content' );
 							<picture>
 								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.webp" type="image/webp">
 								<source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.jpg" type="image/jpg">
-								<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.jpg" alt="<?php echo get_the_title(); ?>">
+								<img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/page/catalog/catalog-3.jpg" alt="<?php echo get_the_title(); ?>">
 							</picture>
 						</a>
 					</div>

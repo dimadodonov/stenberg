@@ -38,7 +38,7 @@ get_header(); ?>
                                         <picture>
                                             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-project.webp" type="image/webp">
                                             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-project.jpg" type="image/jpg">
-                                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-projecte.jpg" alt="<?php echo get_the_title(); ?>">
+                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-projecte.jpg" alt="<?php echo get_the_title(); ?>">
                                         </picture>
                                     <?php } ?>
                                 </div>
@@ -60,9 +60,15 @@ get_header(); ?>
                             </a>
                         <?php
 
+                            /** 
+                             * We construct the pagination arguments to enter into our paginate_links
+                             * function. 
+                             */
+
                         endwhile; // End of the loop.
                     ?>
                 </div>
+                <?php echo get_the_posts_pagination(); ?>
             </div>
             <?php
                 hook_section_clients();

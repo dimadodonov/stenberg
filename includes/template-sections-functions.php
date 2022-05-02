@@ -276,7 +276,7 @@ if ( ! function_exists( 'hook_intro' ) ) {
     function hook_intro() { ?>
         <section class="section section-intro">
             <div class="section-intro__image">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/section/intro/intro.jpg" alt="">
+                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/intro/intro.jpg" alt="">
             </div>
             <div class="section-intro__wrap">
                 <div class="section-intro__title">
@@ -424,17 +424,17 @@ if ( ! function_exists( 'hook_home_siteinfo' ) ) {
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="siteinfo__slide">
-                                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="siteinfo__slide">
-                                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="siteinfo__slide">
-                                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -484,12 +484,13 @@ if ( ! function_exists( 'hook_section_projects' ) ) {
 											<?php if ( has_post_thumbnail()) { ?>
 												<?php the_post_thumbnail('project'); ?>
 											<?php } else { ?>
-												<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+												<img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
 											<?php } ?>
 										</div>
 										<div class="projects-card-desc">
 											<div class="projects-card-desc__inner">
-                                                <?php $projects_video = get_field('projects_video');
+                                                <?php 
+                                                    $projects_video = get_field('projects_video');
                                                     if($projects_video) :
                                                 ?>
                                                     <div class="projects-card-desc__icon">
@@ -679,7 +680,7 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
                                             <picture>
                                                 <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.webp" type="image/webp">
                                                 <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" type="image/jpg">
-                                                <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
+                                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
                                             </picture>
                                         <?php } ?>
                                     </div>
@@ -730,7 +731,7 @@ if ( ! function_exists( 'hook_section_articles' ) ) {
                                             <picture>
                                                 <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.webp" type="image/webp">
                                                 <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" type="image/jpg">
-                                                <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
+                                                <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
                                             </picture>
                                         <?php } ?>
                                     </div>

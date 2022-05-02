@@ -43,7 +43,7 @@ get_header(); ?>
                                         <picture>
                                             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.webp" type="image/webp">
                                             <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" type="image/jpg">
-                                            <img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
+                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/no-article.jpg" alt="<?php echo get_the_title(); ?>">
                                         </picture>
                                     <?php } ?>
                                 </div>

@@ -140,7 +140,7 @@ $gallery = get_field('projects_gallery');
 													<?php if ( has_post_thumbnail()) { ?>
 														<?php the_post_thumbnail('project'); ?>
 													<?php } else { ?>
-														<img loading="auto" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+														<img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
 													<?php } ?>
 												</div>
 												<div class="projects-card-desc">

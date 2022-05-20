@@ -11,6 +11,11 @@
         &__item {
             width: calc(1 / 3 * 100% - 30px);
             margin: 0 15px;
+
+            @include xs-block() {
+                width: calc(100% - 30px);
+                margin: 0 15px 15px;
+            }
         }
     }
 
@@ -19,6 +24,11 @@
         font-family: $f-semibold;
         font-size: 36px;
         line-height: 44px;
+
+        @include xs-block() {
+            font-size: 24px;
+            line-height: normal;
+        }
     }
 
     p {

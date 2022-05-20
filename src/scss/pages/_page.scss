@@ -8,8 +8,14 @@
         font-weight: normal;
         line-height: 76px;
 
-        @include xs-block() {
+        @include md-block() {
+            margin-bottom: 30px;
             font-size: 36px;
+        }
+
+        @include xs-block() {
+            margin-bottom: 10px;
+            font-size: 24px;
         }
     }
 

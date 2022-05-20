@@ -15,7 +15,7 @@ const server = (callback) => {
                 },
             },
         ],
-        proxy: 'stenberg.loc',
+        proxy: 'stenbergpro.loc',
         notify: false,
         browser: 'Firefox',
     });

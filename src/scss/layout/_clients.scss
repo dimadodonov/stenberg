@@ -4,10 +4,18 @@
     &__wrap {
         display: flex;
         align-items: center;
+
+        @include md-block() {
+            flex-direction: column;
+        }
     }
 
     &__title {
         width: 335px;
+
+        @include md-block() {
+            margin-bottom: 30px;
+        }
 
         h2 {
             white-space: nowrap;
@@ -19,6 +27,12 @@
         margin-left: 80px;
         padding-left: 80px;
         border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+        @include md-block() {
+            margin-left: 0;
+            padding-left: 0;
+            border-left: 0;
+        }
 
         .swiper-wrapper {
             display: flex;

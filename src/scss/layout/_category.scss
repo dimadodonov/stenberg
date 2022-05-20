@@ -5,6 +5,11 @@
         font-size: 64px;
         font-weight: normal;
         line-height: 76px;
+
+        @include xs-block() {
+            font-size: 36px;
+            line-height: normal;
+        }
     }
 }
 
@@ -27,6 +32,11 @@
             display: flex;
             flex-wrap: wrap;
             margin: 0 -15px;
+
+            @include md-block() {
+                justify-content: center;
+                padding: 0 10px;
+            }
         }
 
         &-card {
@@ -36,6 +46,17 @@
             margin: 0 15px;
 
             min-height: 520px;
+
+            @include md-block() {
+                width: calc(100% / 2 - 30px);
+                margin-bottom: 30px;
+                min-height: auto;
+            }
+
+            @include xs-block() {
+                width: calc(100% - 30px);
+                margin-bottom: 30px;
+            }
 
             &::after {
                 content: '';

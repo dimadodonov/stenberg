@@ -13,7 +13,7 @@
         width: calc(1 / 4 * 100% - 30px);
         margin: 0 15px;
 
-        @include xs-block() {
+        @include md-block() {
             width: calc(1 / 2 * 100% - 30px);
             margin: 0 15px 30px;
         }
@@ -35,8 +35,13 @@
         width: 140px;
         height: 190px;
 
-        @include xs-block() {
+        @include md-block() {
             width: 120px;
+            height: auto;
+        }
+
+        @include xs-block() {
+            width: 100px;
             height: auto;
         }
 
@@ -49,6 +54,10 @@
             color: #a2be96;
             font-family: $f-bold;
             font-size: 32px;
+
+            @include xs-block() {
+                font-size: 18px;
+            }
         }
     }
 
@@ -58,5 +67,9 @@
         font-family: $f-medium;
         font-size: 18px;
         line-height: 150%;
+
+        @include xs-block() {
+            font-size: 14px;
+        }
     }
 } // .price

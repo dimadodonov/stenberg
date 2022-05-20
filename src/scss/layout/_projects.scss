@@ -94,6 +94,10 @@
             width: calc(50% - 30px);
             max-width: calc(50% - 30px);
             margin: 0 15px 30px;
+
+            @include xs-block() {
+                width: 100%;
+            }
         }
 
         &-desc {

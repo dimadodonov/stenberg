@@ -62,6 +62,10 @@ if ( ! function_exists( 'hook_header' ) ) {
                 <a class="header-phone__num" href="tel:88003014632">8 (800) 301-46-32</a>
                 <a class="header-phone__num" href="tel:84951252579">8 (495) 125-25-79</a>
             </div>
+            <a class="header-stiky-mob__phone" href="<?php echo site_url( '/contacts' ); ?>">
+                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--phone"/></svg>
+            </a>
+            <div class="header-stiky-mob__nav"><div class="hamburger"></div></div>
         </div>
     </div>
     <header class="header" id="header">
@@ -127,6 +131,10 @@ if ( ! function_exists( 'hook_header' ) ) {
                 <div class="header-phone__btn"><span class="btn btn-border initpopup" data-popup="callback">Заказать звонок</span></div>
             </div>
             <?php endif; ?>
+            <a class="header-mob" href="<?php echo site_url( '/contacts' ); ?>">
+                <svg><use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/files/sprite.svg#icon--phone"/></svg>
+            </a>
+            <div class="header-nav"><div class="hamburger"></div></div>
         </div>
     </header>
     <?php }
@@ -848,6 +856,7 @@ if ( ! function_exists( 'yandex_metrika' ) ) {
         // echo get_field( 'yandex_metrika', 'option' );
         ?>
             <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)}; m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)}) (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym"); ym(88474212, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ecommerce:"dataLayer" }); </script> <noscript><div><img src="https://mc.yandex.ru/watch/88474212" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+            <script src="//code.jivo.ru/widget/zmxtbSOVQC" async></script>
         <?php
     }
 }

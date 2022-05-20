@@ -1,4 +1,8 @@
 .edge {
+    @include md-block() {
+        padding: 0 20px;
+    }
+
     &__wrap {
         display: flex;
         flex-wrap: wrap;
@@ -8,6 +12,17 @@
     &__item {
         width: calc(1 / 4 * 100% - 30px);
         margin: 0 15px 30px;
+
+        @include md-block() {
+            width: calc(1 / 2 * 100% - 30px);
+        }
+
+        @include xs-block() {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(1 / 1 * 100% - 30px);
+        }
     }
 
     &__icon {
@@ -26,9 +41,17 @@
         font-family: $f-bold;
         font-size: 24px;
         line-height: 30px;
+
+        @include xs-block() {
+            text-align: center;
+        }
     }
 
     &__desc {
+        @include xs-block() {
+            text-align: center;
+        }
+
         span {
             color: rgba(0, 0, 0, 0.5);
             font-size: 16px;

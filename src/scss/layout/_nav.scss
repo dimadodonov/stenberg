@@ -2,6 +2,14 @@
     position: relative;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
+    @include hd-block() {
+        padding: 0 15px;
+    }
+
+    @include md-block() {
+        display: none;
+    }
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -9,8 +17,18 @@
         max-width: 1470px;
         margin: 0 auto;
 
+        @include md-block() {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
         li {
             position: relative;
+
+            @include md-block() {
+                margin-top: 30px;
+            }
 
             &:first-child a {
                 padding: 30px 20px 30px 0;
@@ -42,10 +60,18 @@
                 transform: translateY(-48%);
                 background-image: url('../../assets/files/icons/svg/icon--arrow-nav.svg');
                 background-size: cover;
+
+                @include xs-block() {
+                    display: none !important;
+                }
             }
 
             &.menu-item-has-children:hover .sub-menu {
                 display: flex;
+
+                @include xs-block() {
+                    display: none !important;
+                }
             }
 
             .sub-menu {

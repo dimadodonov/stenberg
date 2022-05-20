@@ -22,6 +22,10 @@
 
         color: #fff;
 
+        @include md-block() {
+            height: 450px;
+        }
+
         &__image {
             position: relative;
 
@@ -49,6 +53,11 @@
                 min-height: 780px;
                 object-fit: cover;
                 object-position: center;
+
+                @include md-block() {
+                    max-height: 450px;
+                    min-height: 450px;
+                }
             }
         }
 
@@ -60,6 +69,10 @@
             max-width: 1470px;
             margin: 0 auto;
             transform: translateX(-50%);
+
+            @include md-block() {
+                padding: 0 15px;
+            }
         }
 
         &__title {
@@ -69,6 +82,11 @@
                 font-family: $f-semibold;
                 font-size: 64px;
                 line-height: 76px;
+
+                @include xs-block() {
+                    font-size: 42px;
+                    line-height: normal;
+                }
             }
         }
 
@@ -80,6 +98,11 @@
                 font-family: $f;
                 font-size: 24px;
                 line-height: 150%;
+
+                @include xs-block() {
+                    font-size: 18px;
+                    line-height: 150%;
+                }
             }
         }
 
@@ -99,11 +122,21 @@
     &-projects {
         padding: 50px 0;
 
+        @include md-block() {
+            padding: 50px 20px;
+            overflow-x: hidden;
+        }
+
         &__btn {
             width: 100%;
             margin: 50px auto 0;
             padding: 50px 0;
             text-align: center;
+
+            @include xs-block() {
+                margin: 0 auto;
+                padding: 30px 0;
+            }
 
             .btn {
                 display: inline;
@@ -122,6 +155,10 @@
         padding: 100px 0;
         background-color: #fff;
 
+        @include xs-block() {
+            padding: 50px 0;
+        }
+
         h2 {
             margin-bottom: 70px;
         }
@@ -132,10 +169,18 @@
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         background-color: #fff;
+
+        @include xs-block() {
+            display: none;
+        }
     }
 
     &-articles {
         padding: 80px 0;
+
+        @include md-block() {
+            display: none;
+        }
 
         &__btn {
             width: 100%;
@@ -178,6 +223,10 @@
         padding: 80px 0;
         border-top: 1px solid rgba(0, 0, 0, 0.1);
         background-color: #fff;
+
+        @include xs-block() {
+            padding: 50px 0;
+        }
 
         &__btn {
             width: 100%;

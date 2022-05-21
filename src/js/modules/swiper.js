@@ -6,6 +6,7 @@ export default () => {
     }
 
     const swiper = new Swiper('.siteinfo__slider', {
+        loop: true,
         navigation: {
             nextEl: '.dd-slider-next',
             prevEl: '.dd-slider-prev',

@@ -109,18 +109,35 @@
             display: flex;
             flex-direction: column;
 
+            @include xs-block() {
+                right: 40px;
+                bottom: 30px;
+                left: 40px;
+            }
+
             &__inner {
                 display: flex;
                 align-items: center;
+
+                @include xs-block() {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
             }
 
             &__icon {
                 margin-right: 15px;
+                margin-bottom: 15px;
 
                 svg {
                     width: 52px;
                     height: 52px;
                     fill: white;
+
+                    @include xs-block() {
+                        width: 24px;
+                        height: 24px;
+                    }
                 }
             }
 
@@ -131,6 +148,11 @@
                 font-family: $f-semibold;
                 font-size: 28px;
                 line-height: 33px;
+
+                @include xs-block() {
+                    font-size: 16px;
+                    line-height: normal;
+                }
             }
 
             &__link {
@@ -147,6 +169,12 @@
                     font-family: $f-semibold;
                     font-size: 16px;
                     line-height: 19px;
+
+                    @include xs-block() {
+                        font-family: $f;
+                        font-size: 14px;
+                        line-height: normal;
+                    }
                 }
 
                 svg {

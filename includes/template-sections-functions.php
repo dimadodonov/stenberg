@@ -437,12 +437,27 @@ if ( ! function_exists( 'hook_home_siteinfo' ) ) {
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="siteinfo__slide">
-                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                            <img loading="lazy" src="<?php echo site_url(); ?>/wp-content/uploads/2022/04/shponirovannyy-potolok-slozhnoy-formy-dlya-dizaynera-eleny-zorinoy.jpg" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="siteinfo__slide">
-                                            <img loading="lazy" src="<?php echo get_template_directory_uri(); ?>/assets/images/section/siteinfo/siteinfo.jpg" alt="">
+                                            <img loading="lazy" src="<?php echo site_url(); ?>/wp-content/uploads/2022/04/liberty_3-720x720.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="siteinfo__slide">
+                                            <img loading="lazy" src="<?php echo site_url(); ?>/wp-content/uploads/2022/05/hamam_11-720x720.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="siteinfo__slide">
+                                            <img loading="lazy" src="<?php echo site_url(); ?>/wp-content/uploads/2022/05/synthes_school_remont_1_1920px-720x720.jpg" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="siteinfo__slide">
+                                            <img loading="lazy" src="<?php echo site_url(); ?>/wp-content/uploads/2022/05/df82f907-5e36-47d1-ab1d-1535776881e5-720x720.jpg" alt="">
                                         </div>
                                     </div>
                                 </div>

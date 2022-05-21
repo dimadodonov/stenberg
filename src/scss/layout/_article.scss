@@ -39,6 +39,10 @@
             color: #a2be96;
         }
 
+        &__image img {
+            height: auto;
+        }
+
         &__date {
             position: absolute;
             top: 15px;
